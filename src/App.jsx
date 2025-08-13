@@ -130,13 +130,18 @@ function App() {
           </div>
         </div>
 
-        {/* Right Side: Image/Video */}
+        {/* Right Side: Hero Video */}
         <div className="absolute top-0 right-0 w-full lg:w-3/5 h-full hero-media scanline-overlay">
-          <img 
-            src="https://storage.googleapis.com/gemini-prod-us-west1-4099a2dd-uploads/uploaded:Feature-Img.jpg-9cd8c280-35b6-4e61-b9d0-39e21f1d0067" 
-            alt="Gerardo Mena in futuristic gear holding a large weapon, representing the AI revolution."
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
             className="w-full h-full object-cover object-center opacity-40 lg:opacity-100"
-          />
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </main>
 
