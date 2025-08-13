@@ -145,18 +145,10 @@ function App() {
         </div>
       </main>
 
-      {/* Scroll Cue (Desktop Only) */}
-      <div className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center gap-2 text-gray-500">
-          <span className="font-orbitron text-xs uppercase tracking-widest">Scroll to explore</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
-        </div>
-      </div>
-
       {/* YouTube Highlight Reel Section */}
       <section className="bg-main-gradient py-16 px-8">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-gray-300 text-xl md:text-2xl mb-8 font-manrope">
+          <h2 className="text-white text-2xl md:text-4xl mb-8 font-manrope slide-in-right">
             Enjoy a highlight reel of Tony Mena's recent work.
           </h2>
           
@@ -182,11 +174,55 @@ function App() {
               href="#" 
               className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg"
             >
-              Click here to bring your amazing idea to life!
+              Click here to bring your amazing ideas to life!
             </a>
           </div>
         </div>
       </section>
+
+      {/* Professional Footer */}
+      <footer className="bg-gray-900/50 backdrop-blur-sm border-t border-cyan-500/20 py-12">
+        <div className="container mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Brand Section */}
+            <div className="text-center md:text-left">
+              <h3 className="font-orbitron text-2xl font-bold text-white mb-4">GM</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Transforming ideas into reality through AI innovation, creative content, and cutting-edge web development.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="text-center">
+              <h4 className="font-orbitron text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <nav className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">About</a>
+                <a href="#" className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">Portfolio</a>
+                <a href="#" className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">Services</a>
+                <a href="#" className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">Contact</a>
+              </nav>
+            </div>
+
+            {/* Contact Info */}
+            <div className="text-center md:text-right">
+              <h4 className="font-orbitron text-lg font-semibold text-white mb-4">Get In Touch</h4>
+              <div className="space-y-2 text-sm text-gray-400">
+                <p>Ready to collaborate?</p>
+                <a href="#" className="block text-cyan-400 hover:text-white transition-colors">
+                  Let's work together
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-700 pt-8 text-center">
+            <p className="text-gray-500 text-sm">
+              © 2025 Gerardo Mena. All rights reserved. | Powered by AI Innovation
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
