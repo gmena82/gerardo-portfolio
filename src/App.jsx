@@ -86,8 +86,9 @@ function App() {
             <p className="font-orbitron text-cyan-400 text-sm md:text-base font-bold tracking-widest uppercase">
               The AI Revolution
             </p>
-            <h1 className="font-orbitron text-5xl md:text-7xl font-black my-4 text-gradient">
-              GERARDO MENA
+            <h1 className="font-orbitron text-5xl md:text-7xl font-black my-4">
+              <div className="text-gradient-gerardo">GERARDO</div>
+              <div className="text-gradient-mena">MENA</div>
             </h1>
             <p className="text-gray-300 text-xl md:text-2xl leading-relaxed mb-8">
               Published author, AI artist, social media coordinator, and web developer. 
@@ -218,7 +219,7 @@ function App() {
           {/* Bottom Bar */}
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-500 text-sm">
-              © 2025 Gerardo Mena. All rights reserved. | Powered by AI Innovation
+              © 2025 Gerardo Mena. All rights reserved.
             </p>
           </div>
         </div>
