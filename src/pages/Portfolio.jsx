@@ -5,32 +5,28 @@ function Portfolio() {
       publication: "The New York Times - At War Blog",
       date: "August 21, 2013",
       description: "A powerful personal essay about the unexpected kindness of a Starbucks barista toward a veteran, exploring themes of service, gratitude, and civilian-military understanding.",
-      url: "https://archive.nytimes.com/atwar.blogs.nytimes.com/2013/08/21/a-much-needed-caramel-latte/",
-      tags: ["Writing", "Military", "Personal Essay"]
+      url: "https://archive.nytimes.com/atwar.blogs.nytimes.com/2013/08/21/a-much-needed-caramel-latte/"
     },
     {
       title: "'The Enemy,' Through the Eyes of a Child",
       publication: "The New York Times - At War Blog", 
       date: "July 14, 2014",
       description: "A profound personal essay about confronting and overcoming post-war prejudice through the innocent perspective of children at his son's kindergarten 'Teddy Bear Picnic.'",
-      url: "https://archive.nytimes.com/atwar.blogs.nytimes.com/2014/07/14/the-enemy-through-the-eyes-of-a-child/",
-      tags: ["Writing", "Social Justice", "Personal Growth"]
+      url: "https://archive.nytimes.com/atwar.blogs.nytimes.com/2014/07/14/the-enemy-through-the-eyes-of-a-child/"
     },
     {
       title: "Vogue Magazine Feature",
       publication: "Vogue Magazine",
       date: "October 2, 2014",
       description: "Featured as a key performer at the prestigious Headstrong Project benefit in Tribeca, reading poetry alongside celebrities Jake Gyllenhaal and Adam Driver. Event raised $400,000 for veteran PTSD treatment.",
-      url: "https://www.vogue.com/article/headstrong-project-words-of-war-fall-benefit",
-      tags: ["Performance", "Charity", "Celebrity Event"]
+      url: "https://www.vogue.com/article/headstrong-project-words-of-war-fall-benefit"
     },
     {
       title: "Best New Poets 2011",
       publication: "Best New Poets Anthology",
       date: "2011",
       description: "Selected as one of only 50 emerging poets nationwide for inclusion in this prestigious annual anthology. Recognized as a crucial venue for rising poets and valuable resource for poetry lovers.",
-      url: "https://app.thestorygraph.com/books/590b7aa0-52f2-49bc-b5ca-7db2c20af47c",
-      tags: ["Poetry", "Anthology", "Recognition"]
+      url: "https://app.thestorygraph.com/books/590b7aa0-52f2-49bc-b5ca-7db2c20af47c"
     }
   ];
 
@@ -39,29 +35,25 @@ function Portfolio() {
       title: "Generative Engine Optimization (GEO)",
       category: "AI Strategy",
       description: "Pioneer in LLM Search Optimization (LLMSO), developing strategies for brands to rank prominently in AI-powered search results and conversational interfaces.",
-      metrics: "Improved search visibility by 300%+",
-      tags: ["AI", "SEO", "Strategy"]
+      metrics: "Improved search visibility by 300%+"
     },
     {
       title: "AI-Enhanced Video Production",
       category: "Content Creation",
       description: "Professional video campaigns combining AI tools with cinematic production values. Created scroll-stopping content optimized for social platforms and funding presentations.",
-      metrics: "19+ Million YouTube Views",
-      tags: ["Video", "AI", "Social Media"]
+      metrics: "19+ Million YouTube Views"
     },
     {
       title: "Cross-Platform Marketing Campaigns",
       category: "Digital Marketing",
       description: "Data-driven marketing strategies across social media, web, and traditional channels. Focus on conversion optimization and measurable ROI for clients.",
-      metrics: "3+ Million Website Visitors",
-      tags: ["Marketing", "Analytics", "ROI"]
+      metrics: "3+ Million Website Visitors"
     },
     {
       title: "Brand Identity & Visual Design",
       category: "Graphic Design",
       description: "AI-enhanced design workflows for magazines, sports teams, nonprofits, and professional podcasts. Combining creativity with conversion-focused layouts.",
-      metrics: "Multiple 501(c)(3) Organizations",
-      tags: ["Design", "Branding", "Nonprofit"]
+      metrics: "Multiple 501(c)(3) Organizations"
     }
   ];
 
@@ -116,13 +108,6 @@ function Portfolio() {
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {work.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {work.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <a 
                   href={work.url} 
                   target="_blank" 
@@ -159,13 +144,6 @@ function Portfolio() {
                   <p className="text-cyan-400 font-semibold text-sm">Key Metric:</p>
                   <p className="text-white text-sm">{project.metrics}</p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -196,10 +174,6 @@ function Portfolio() {
                 </div>
                 <h4 className="font-orbitron text-lg font-bold text-white mb-2">Aesthetic Tile Showcase 2025</h4>
                 <p className="text-gray-300 text-sm mb-4">Professional tile showcase with dynamic camera movements and polished color grading</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Video Production</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Social Media</span>
-                </div>
               </div>
 
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
@@ -215,10 +189,6 @@ function Portfolio() {
                 </div>
                 <h4 className="font-orbitron text-lg font-bold text-white mb-2">Black Insurance Group Advertisement</h4>
                 <p className="text-gray-300 text-sm mb-4">Insurance company advertisement optimized for social media engagement</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Commercial</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Brand Strategy</span>
-                </div>
               </div>
             </div>
           </div>
@@ -242,10 +212,6 @@ function Portfolio() {
                 </div>
                 <h4 className="font-orbitron text-lg font-bold text-white mb-2">Dark Horse Elite 501c3</h4>
                 <p className="text-gray-300 text-sm mb-4">Immersive 60-90 second nonprofit campaign designed for funding presentations</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Nonprofit</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Fundraising</span>
-                </div>
               </div>
 
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
@@ -261,10 +227,6 @@ function Portfolio() {
                 </div>
                 <h4 className="font-orbitron text-lg font-bold text-white mb-2">PTSD Doesn't Just Go Away - AI Video</h4>
                 <p className="text-gray-300 text-sm mb-4">AI-enhanced video addressing veteran mental health with cinematic storytelling</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">AI Enhanced</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Mental Health</span>
-                </div>
               </div>
             </div>
           </div>
