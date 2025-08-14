@@ -77,6 +77,27 @@ function Portfolio() {
           </p>
         </div>
 
+        {/* Key Achievements - Moved to Top */}
+        <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border-2 border-cyan-500/30 rounded-xl p-10 mb-20 shadow-2xl">
+          <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+            <span className="text-gradient-gerardo">KEY</span> <span className="text-gradient-mena">ACHIEVEMENTS</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6 bg-gray-900/40 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-3 font-orbitron">19M+</div>
+              <div className="text-gray-300 text-base font-semibold">YouTube Views Generated</div>
+            </div>
+            <div className="p-6 bg-gray-900/40 rounded-lg border border-pink-500/20 hover:border-pink-400/40 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-pink-400 mb-3 font-orbitron">3M+</div>
+              <div className="text-gray-300 text-base font-semibold">Website Visitors Driven</div>
+            </div>
+            <div className="p-6 bg-gray-900/40 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-3 font-orbitron">$1M+</div>
+              <div className="text-gray-300 text-base font-semibold">Raised for Charity Events & 501c3 Organizations</div>
+            </div>
+          </div>
+        </div>
+
         {/* Literary Publications Section */}
         <div className="mb-20">
           <h2 className="font-orbitron text-2xl md:text-3xl font-bold text-white mb-8 text-center">
@@ -106,9 +127,12 @@ function Portfolio() {
                   href={work.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors"
+                  className="inline-block text-cyan-400 hover:text-cyan-300 text-lg font-bold transition-all duration-300 transform hover:scale-105 animate-pulse hover:animate-none bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/25"
+                  style={{
+                    animation: 'wiggle 2s ease-in-out infinite'
+                  }}
                 >
-                  Read Article →
+                  📖 Read Article →
                 </a>
               </div>
             ))}
@@ -245,27 +269,6 @@ function Portfolio() {
                   <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Mental Health</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Achievements */}
-        <div className="bg-gray-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8 mb-16">
-          <h2 className="font-orbitron text-2xl font-bold text-white mb-6 text-center">
-            <span className="text-gradient-gerardo">KEY</span> <span className="text-gradient-mena">ACHIEVEMENTS</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="p-4">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">19M+</div>
-              <div className="text-gray-300 text-sm">YouTube Views Generated</div>
-            </div>
-            <div className="p-4">
-              <div className="text-3xl font-bold text-pink-400 mb-2">3M+</div>
-              <div className="text-gray-300 text-sm">Website Visitors Driven</div>
-            </div>
-            <div className="p-4">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">$400K</div>
-              <div className="text-gray-300 text-sm">Raised at Vogue Charity Event</div>
             </div>
           </div>
         </div>
