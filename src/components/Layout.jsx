@@ -1,16 +1,23 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
-function Layout({ children, currentPage, setCurrentPage }) {
+function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
-  const handleNavClick = (page) => {
-    setCurrentPage(page)
+  const closeMobileMenu = () => {
     setMobileMenuOpen(false)
+  }
+
+  const isActive = (path) => {
+    if (path === '/' && location.pathname === '/') return true
+    if (path !== '/' && location.pathname.startsWith(path)) return true
+    return false
   }
 
   return (
@@ -26,49 +33,49 @@ function Layout({ children, currentPage, setCurrentPage }) {
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-30 p-4 md:px-8">
         <div className="container mx-auto flex justify-between items-center">
-          <button 
-            onClick={() => handleNavClick('home')}
+          <Link 
+            to="/"
             className="font-orbitron text-2xl font-bold text-white hover:text-cyan-400 transition-colors"
           >
             GM
-          </button>
+          </Link>
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => handleNavClick('home')}
-              className={`transition-colors ${currentPage === 'home' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            <Link 
+              to="/"
+              className={`transition-colors ${isActive('/') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               Home
-            </button>
-            <button 
-              onClick={() => handleNavClick('about')}
-              className={`transition-colors ${currentPage === 'about' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            </Link>
+            <Link 
+              to="/about"
+              className={`transition-colors ${isActive('/about') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               About Us
-            </button>
-            <button 
-              onClick={() => handleNavClick('portfolio')}
-              className={`transition-colors ${currentPage === 'portfolio' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            </Link>
+            <Link 
+              to="/portfolio"
+              className={`transition-colors ${isActive('/portfolio') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               Portfolio
-            </button>
-            <button 
-              onClick={() => handleNavClick('resume')}
-              className={`transition-colors ${currentPage === 'resume' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            </Link>
+            <Link 
+              to="/resume"
+              className={`transition-colors ${isActive('/resume') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               Resume
-            </button>
-            <button 
-              onClick={() => handleNavClick('contact')}
-              className={`transition-colors ${currentPage === 'contact' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            </Link>
+            <Link 
+              to="/contact"
+              className={`transition-colors ${isActive('/contact') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               Contact Us
-            </button>
-            <button 
-              onClick={() => handleNavClick('blog')}
-              className={`transition-colors ${currentPage === 'blog' ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
+            </Link>
+            <Link 
+              to="/blog"
+              className={`transition-colors ${isActive('/blog') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
               Blog
-            </button>
+            </Link>
           </nav>
           <div className="md:hidden">
             <button 
@@ -98,42 +105,48 @@ function Layout({ children, currentPage, setCurrentPage }) {
           </button>
         </div>
         <nav className="flex flex-col items-center space-y-6 mt-8">
-          <button 
-            onClick={() => handleNavClick('home')}
-            className={`text-lg transition-colors ${currentPage === 'home' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          <Link 
+            to="/"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             Home
-          </button>
-          <button 
-            onClick={() => handleNavClick('about')}
-            className={`text-lg transition-colors ${currentPage === 'about' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          </Link>
+          <Link 
+            to="/about"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/about') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             About Us
-          </button>
-          <button 
-            onClick={() => handleNavClick('portfolio')}
-            className={`text-lg transition-colors ${currentPage === 'portfolio' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          </Link>
+          <Link 
+            to="/portfolio"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/portfolio') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             Portfolio
-          </button>
-          <button 
-            onClick={() => handleNavClick('resume')}
-            className={`text-lg transition-colors ${currentPage === 'resume' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          </Link>
+          <Link 
+            to="/resume"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/resume') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             Resume
-          </button>
-          <button 
-            onClick={() => handleNavClick('contact')}
-            className={`text-lg transition-colors ${currentPage === 'contact' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          </Link>
+          <Link 
+            to="/contact"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/contact') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             Contact Us
-          </button>
-          <button 
-            onClick={() => handleNavClick('blog')}
-            className={`text-lg transition-colors ${currentPage === 'blog' ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
+          </Link>
+          <Link 
+            to="/blog"
+            onClick={closeMobileMenu}
+            className={`text-lg transition-colors ${isActive('/blog') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
             Blog
-          </button>
+          </Link>
         </nav>
       </div>
 
@@ -167,30 +180,30 @@ function Layout({ children, currentPage, setCurrentPage }) {
             <div className="text-center">
               <h4 className="font-orbitron text-lg font-semibold text-white mb-4">Quick Links</h4>
               <nav className="space-y-2">
-                <button 
-                  onClick={() => handleNavClick('about')}
+                <Link 
+                  to="/about"
                   className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                 >
                   About
-                </button>
-                <button 
-                  onClick={() => handleNavClick('portfolio')}
+                </Link>
+                <Link 
+                  to="/portfolio"
                   className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                 >
                   Portfolio
-                </button>
-                <button 
-                  onClick={() => handleNavClick('contact')}
+                </Link>
+                <Link 
+                  to="/contact"
                   className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                 >
                   Contact
-                </button>
-                <button 
-                  onClick={() => handleNavClick('blog')}
+                </Link>
+                <Link 
+                  to="/blog"
                   className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                 >
                   Blog
-                </button>
+                </Link>
               </nav>
             </div>
 
@@ -199,12 +212,12 @@ function Layout({ children, currentPage, setCurrentPage }) {
               <h4 className="font-orbitron text-lg font-semibold text-white mb-4">Get In Touch</h4>
               <div className="space-y-2 text-sm text-gray-400">
                 <p>Ready to collaborate?</p>
-                <button 
-                  onClick={() => handleNavClick('contact')}
+                <Link 
+                  to="/contact"
                   className="block text-cyan-400 hover:text-white transition-colors"
                 >
                   Let's work together
-                </button>
+                </Link>
               </div>
             </div>
           </div>

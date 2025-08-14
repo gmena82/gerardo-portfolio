@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -9,31 +9,19 @@ import Blog from './pages/Blog'
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home />
-      case 'about':
-        return <About />
-      case 'portfolio':
-        return <Portfolio />
-      case 'resume':
-        return <Resume />
-      case 'contact':
-        return <Contact />
-      case 'blog':
-        return <Blog />
-      default:
-        return <Home />
-    }
-  }
-
   return (
-    <Layout currentPage={currentPage} setCurrentPage={setCurrentPage}>
-      {renderPage()}
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 
