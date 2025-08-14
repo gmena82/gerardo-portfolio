@@ -150,6 +150,105 @@ function Portfolio() {
           </div>
         </div>
 
+        {/* Video Portfolio Showcase */}
+        <div className="mb-20">
+          <h2 className="font-orbitron text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+            <span className="text-gradient-gerardo">VIDEO</span> <span className="text-gradient-mena">PORTFOLIO</span>
+          </h2>
+          
+          {/* Short-Form Content */}
+          <div className="mb-12">
+            <h3 className="font-orbitron text-xl font-bold text-cyan-400 mb-6 text-center">
+              Short-Form Content & Social Media
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
+                <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/aZQgLb2cLiE"
+                    title="Aesthetic Tile Showcase 2025"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Aesthetic Tile Showcase 2025</h4>
+                <p className="text-gray-300 text-sm mb-4">Professional tile showcase with dynamic camera movements and polished color grading</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Video Production</span>
+                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Social Media</span>
+                </div>
+              </div>
+
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
+                <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/Rva960UYb8Y"
+                    title="Black Insurance Group Advertisement"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Black Insurance Group Advertisement</h4>
+                <p className="text-gray-300 text-sm mb-4">Insurance company advertisement optimized for social media engagement</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Commercial</span>
+                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Brand Strategy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Long-Form Campaigns */}
+          <div className="mb-12">
+            <h3 className="font-orbitron text-xl font-bold text-cyan-400 mb-6 text-center">
+              Long-Form Campaigns & Funding Presentations
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
+                <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/WRnwW_EJXes"
+                    title="Dark Horse Elite 501c3"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Dark Horse Elite 501c3</h4>
+                <p className="text-gray-300 text-sm mb-4">Immersive 60-90 second nonprofit campaign designed for funding presentations</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Nonprofit</span>
+                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Fundraising</span>
+                </div>
+              </div>
+
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
+                <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/za3EynewTrU"
+                    title="PTSD Doesn't Just Go Away - AI Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">PTSD Doesn't Just Go Away - AI Video</h4>
+                <p className="text-gray-300 text-sm mb-4">AI-enhanced video addressing veteran mental health with cinematic storytelling</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">AI Enhanced</span>
+                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Mental Health</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Key Achievements */}
         <div className="bg-gray-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8 mb-16">
           <h2 className="font-orbitron text-2xl font-bold text-white mb-6 text-center">
