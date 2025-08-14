@@ -55,7 +55,7 @@ function Home() {
         </div>
 
         {/* Right Side: Hero Video */}
-        <div className="absolute top-0 right-0 w-full lg:w-3/5 h-full hero-media scanline-overlay">
+        <div className="absolute inset-0 lg:left-1/2 w-full lg:w-1/2 h-full hero-media scanline-overlay">
           <video 
             autoPlay 
             muted 
