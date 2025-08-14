@@ -181,26 +181,38 @@ function Layout({ children }) {
               <h4 className="font-orbitron text-lg font-semibold text-white mb-4">Quick Links</h4>
               <nav className="space-y-2">
                 <Link 
-                  to="/about"
-                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                  to="/"
+                  className={`block transition-colors text-sm ${isActive('/') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
                 >
-                  About
+                  Home
+                </Link>
+                <Link 
+                  to="/about"
+                  className={`block transition-colors text-sm ${isActive('/about') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
+                >
+                  About Us
                 </Link>
                 <Link 
                   to="/portfolio"
-                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                  className={`block transition-colors text-sm ${isActive('/portfolio') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
                 >
                   Portfolio
                 </Link>
                 <Link 
-                  to="/contact"
-                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                  to="/resume"
+                  className={`block transition-colors text-sm ${isActive('/resume') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
                 >
-                  Contact
+                  Resume
+                </Link>
+                <Link 
+                  to="/contact"
+                  className={`block transition-colors text-sm ${isActive('/contact') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
+                >
+                  Contact Us
                 </Link>
                 <Link 
                   to="/blog"
-                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                  className={`block transition-colors text-sm ${isActive('/blog') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
                 >
                   Blog
                 </Link>
