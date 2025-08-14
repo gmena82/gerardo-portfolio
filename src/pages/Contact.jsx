@@ -1,4 +1,53 @@
+import { useState } from 'react'
+
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(formData.subject || 'Contact Form Submission')
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}`
+      )
+      
+      const mailtoLink = `mailto:Gerardomena82@live.com?subject=${subject}&body=${body}`
+      
+      // Open email client
+      window.location.href = mailtoLink
+      
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      
+    } catch (error) {
+      console.error('Error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section className="py-20 px-8 pt-32">
       <div className="container mx-auto max-w-6xl">
@@ -15,25 +64,48 @@ function Contact() {
           {/* Contact Form */}
           <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-6">Send a Message</h2>
-            <form className="space-y-6">
+            
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+                <p className="text-green-400 text-sm">
+                  ✅ Your email client should open with the message ready to send!
+                </p>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
+                <p className="text-red-400 text-sm">
+                  ❌ There was an error. Please try again or email directly: Gerardomena82@live.com
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Full Name
+                  Full Name *
                 </label>
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address
+                  Email Address *
                 </label>
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
                   placeholder="your@email.com"
                 />
@@ -45,28 +117,40 @@ function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
                   placeholder="Project inquiry"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
+                  Message *
                 </label>
                 <textarea
                   id="message"
                   rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors resize-none"
                   placeholder="Tell me about your project and goals..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
               </button>
             </form>
+            
+            <div className="mt-6 p-4 bg-gray-800/30 rounded-lg border border-gray-600/30">
+              <p className="text-gray-400 text-sm">
+                📧 Direct email: <a href="mailto:Gerardomena82@live.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">Gerardomena82@live.com</a>
+              </p>
+            </div>
           </div>
 
           {/* Contact Information */}
