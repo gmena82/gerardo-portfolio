@@ -4,6 +4,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   })
@@ -28,6 +29,7 @@ function Contact() {
       const formDataToSend = new FormData()
       formDataToSend.append('name', formData.name)
       formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone)
       formDataToSend.append('subject', formData.subject)
       formDataToSend.append('message', formData.message)
 
@@ -42,7 +44,7 @@ function Contact() {
       if (response.ok) {
         setSubmitStatus('success')
         setStatusMessage('Thank you for your message! I\'ll get back to you within 24 hours.')
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
       } else {
         const result = await response.json()
         setSubmitStatus('error')
@@ -128,6 +130,21 @@ function Contact() {
                   disabled={isSubmitting}
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  placeholder="(555) 123-4567"
                 />
               </div>
               <div>
