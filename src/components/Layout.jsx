@@ -35,9 +35,13 @@ function Layout({ children }) {
         <div className="container mx-auto flex justify-between items-center">
           <Link 
             to="/"
-            className="font-orbitron text-2xl font-bold text-white hover:text-cyan-400 transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            GM
+            <img 
+              src="/Gm-Logo.png" 
+              alt="GM Logo" 
+              className="h-10 w-auto"
+            />
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
@@ -170,7 +174,13 @@ function Layout({ children }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Brand Section */}
             <div className="text-center md:text-left">
-              <h3 className="font-orbitron text-2xl font-bold text-white mb-4">GM</h3>
+              <div className="mb-4">
+                <img 
+                  src="/Gm-Logo.png" 
+                  alt="GM Logo" 
+                  className="h-12 w-auto mx-auto md:mx-0"
+                />
+              </div>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Transforming ideas into reality through AI innovation, creative content, and cutting-edge web development.
               </p>
