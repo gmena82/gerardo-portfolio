@@ -55,17 +55,20 @@ function Home() {
         </div>
 
         {/* Right Side: Hero Video */}
-        <div className="absolute inset-0 lg:left-1/2 w-full lg:w-1/2 h-full hero-media scanline-overlay">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="w-full h-full object-cover object-center opacity-40 lg:opacity-100"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="absolute inset-0 lg:left-1/3 lg:right-8 w-full lg:w-auto h-full">
+          <div className="relative w-full h-full bg-black rounded-none lg:rounded-lg overflow-hidden border-0 lg:border-4 lg:border-black shadow-2xl">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-full object-cover object-right lg:object-center opacity-40 lg:opacity-100"
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 hero-media scanline-overlay"></div>
+          </div>
         </div>
       </section>
 
