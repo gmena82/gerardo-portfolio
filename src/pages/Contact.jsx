@@ -25,23 +25,28 @@ function Contact() {
     setStatusMessage('')
 
     try {
-      const response = await fetch('/api/contact', {
+      const formDataToSend = new FormData()
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('subject', formData.subject)
+      formDataToSend.append('message', formData.message)
+
+      const response = await fetch('https://formspree.io/f/mpwlnloy', {
         method: 'POST',
+        body: formDataToSend,
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+          'Accept': 'application/json'
+        }
       })
 
-      const result = await response.json()
-
-      if (result.success) {
+      if (response.ok) {
         setSubmitStatus('success')
-        setStatusMessage(result.message)
+        setStatusMessage('Thank you for your message! I\'ll get back to you within 24 hours.')
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
+        const result = await response.json()
         setSubmitStatus('error')
-        setStatusMessage(result.message || 'There was an error sending your message.')
+        setStatusMessage(result.error || 'There was an error sending your message. Please try again.')
       }
       
     } catch (error) {
@@ -100,6 +105,7 @@ function Contact() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -115,6 +121,7 @@ function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -130,6 +137,7 @@ function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   disabled={isSubmitting}
@@ -143,6 +151,7 @@ function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
