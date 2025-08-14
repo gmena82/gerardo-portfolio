@@ -9,6 +9,7 @@ function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleChange = (e) => {
     setFormData({
@@ -21,28 +22,32 @@ function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('')
+    setStatusMessage('')
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject || 'Contact Form Submission')
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Subject: ${formData.subject}\n\n` +
-        `Message:\n${formData.message}`
-      )
-      
-      const mailtoLink = `mailto:Gerardomena82@live.com?subject=${subject}&body=${body}`
-      
-      // Open email client
-      window.location.href = mailtoLink
-      
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus('success')
+        setStatusMessage(result.message)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        setSubmitStatus('error')
+        setStatusMessage(result.message || 'There was an error sending your message.')
+      }
       
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
+      setStatusMessage('Network error. Please check your connection and try again, or email me directly at Gerardomena82@live.com.')
     } finally {
       setIsSubmitting(false)
     }
@@ -67,17 +72,23 @@ function Contact() {
             
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
-                <p className="text-green-400 text-sm">
-                  ✅ Your email client should open with the message ready to send!
-                </p>
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <p className="text-green-400 text-sm">{statusMessage}</p>
+                </div>
               </div>
             )}
             
             {submitStatus === 'error' && (
               <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
-                <p className="text-red-400 text-sm">
-                  ❌ There was an error. Please try again or email directly: Gerardomena82@live.com
-                </p>
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-red-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path>
+                  </svg>
+                  <p className="text-red-400 text-sm">{statusMessage}</p>
+                </div>
               </div>
             )}
 
@@ -92,7 +103,8 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your name"
                 />
               </div>
@@ -106,7 +118,8 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="your@email.com"
                 />
               </div>
@@ -119,7 +132,8 @@ function Contact() {
                   id="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Project inquiry"
                 />
               </div>
@@ -133,23 +147,40 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors resize-none"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about your project and goals..."
                 ></textarea>
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending Message...
+                  </div>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
             
             <div className="mt-6 p-4 bg-gray-800/30 rounded-lg border border-gray-600/30">
-              <p className="text-gray-400 text-sm">
-                📧 Direct email: <a href="mailto:Gerardomena82@live.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">Gerardomena82@live.com</a>
-              </p>
+              <div className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+                <p className="text-gray-400 text-sm">
+                  Direct email: <a href="mailto:Gerardomena82@live.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">Gerardomena82@live.com</a>
+                </p>
+              </div>
             </div>
           </div>
 
