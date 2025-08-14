@@ -6,7 +6,8 @@ function About() {
         <img 
           src="/about-hero.webp" 
           alt="Gerardo Tony Mena - Professional portrait"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '50% 0%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-transparent to-gray-900/60"></div>
