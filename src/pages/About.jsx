@@ -2,7 +2,7 @@ function About() {
   return (
     <>
       {/* Full-width Hero Image */}
-      <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
+      <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden mt-16 md:mt-20">
         <img 
           src="/about-hero.webp" 
           alt="Gerardo Tony Mena - Professional portrait"
