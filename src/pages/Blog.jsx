@@ -11,6 +11,28 @@ function Blog() {
           </p>
         </div>
 
+        {/* Hero Video Section */}
+        <div className="mb-20">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-12 md:col-span-2"></div>
+            <div className="col-span-12 md:col-span-8">
+              <div className="relative rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+                <video 
+                  className="w-full h-auto"
+                  controls
+                  poster=""
+                  preload="metadata"
+                >
+                  <source src="/Blog-F.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-2"></div>
+          </div>
+        </div>
+
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {[
