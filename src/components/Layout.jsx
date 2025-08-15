@@ -38,7 +38,7 @@ function Layout({ children }) {
             className="hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/Gm-Logo.png" 
+              src="/GM-Logo.png" 
               alt="GM Logo" 
               className="h-10 w-auto"
             />
@@ -176,7 +176,7 @@ function Layout({ children }) {
             <div className="text-center md:text-left">
               <div className="mb-4">
                 <img 
-                  src="/Gm-Logo.png" 
+                  src="/GM-Logo.png" 
                   alt="GM Logo" 
                   className="h-12 w-auto mx-auto md:mx-0"
                 />
