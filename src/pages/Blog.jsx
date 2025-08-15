@@ -19,8 +19,10 @@ function Blog() {
               <div className="relative rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
                 <video 
                   className="w-full h-auto"
-                  controls
-                  poster=""
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   preload="metadata"
                 >
                   <source src="/Blog-F.mp4" type="video/mp4" />
