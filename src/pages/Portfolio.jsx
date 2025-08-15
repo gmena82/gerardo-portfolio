@@ -95,6 +95,64 @@ function Portfolio() {
           <h2 className="font-orbitron text-2xl md:text-3xl font-bold text-white mb-8 text-center">
             <span className="text-blue-400">LITERARY</span> <span className="text-blue-500">PUBLICATIONS</span>
           </h2>
+          
+          {/* Publications Gallery */}
+          <div className="mb-12 p-8 bg-gray-800/30 rounded-xl border border-gray-700/50">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {/* NYT Article 1 */}
+              <div className="group cursor-pointer">
+                <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                  <img 
+                    src="/NYT-1.png" 
+                    alt="New York Times - A Much-Needed Treat, and a Welcome Surprise"
+                    className="w-full h-48 object-cover rounded-lg mb-3"
+                  />
+                  <h4 className="text-cyan-400 font-semibold text-sm mb-2">New York Times</h4>
+                  <p className="text-gray-300 text-xs leading-relaxed">A Much-Needed Treat, and a Welcome Surprise</p>
+                </div>
+              </div>
+
+              {/* NYT Article 2 */}
+              <div className="group cursor-pointer">
+                <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                  <img 
+                    src="/NYT-2.png" 
+                    alt="New York Times - The Enemy, Through the Eyes of a Child"
+                    className="w-full h-48 object-cover rounded-lg mb-3"
+                  />
+                  <h4 className="text-cyan-400 font-semibold text-sm mb-2">New York Times</h4>
+                  <p className="text-gray-300 text-xs leading-relaxed">'The Enemy,' Through the Eyes of a Child</p>
+                </div>
+              </div>
+
+              {/* Vogue Feature */}
+              <div className="group cursor-pointer">
+                <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20">
+                  <img 
+                    src="/Vogue.png" 
+                    alt="Vogue Magazine - Headstrong Project Words of War Benefit"
+                    className="w-full h-48 object-cover rounded-lg mb-3"
+                  />
+                  <h4 className="text-pink-400 font-semibold text-sm mb-2">Vogue Magazine</h4>
+                  <p className="text-gray-300 text-xs leading-relaxed">Headstrong Project's Words of War Benefit</p>
+                </div>
+              </div>
+
+              {/* Best New Poets */}
+              <div className="group cursor-pointer">
+                <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                  <img 
+                    src="/50BP.png" 
+                    alt="Best New Poets 2011 Anthology"
+                    className="w-full h-48 object-cover rounded-lg mb-3"
+                  />
+                  <h4 className="text-cyan-400 font-semibold text-sm mb-2">Best New Poets</h4>
+                  <p className="text-gray-300 text-xs leading-relaxed">2011 Anthology - 50 Emerging Writers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {literaryWorks.map((work, index) => (
               <div key={index} className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300 group">
