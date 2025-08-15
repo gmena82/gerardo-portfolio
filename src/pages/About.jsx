@@ -33,6 +33,66 @@ function About() {
               <p className="text-lg md:text-xl leading-relaxed">
                 Returning home, he faced a new system to decode: the complex landscape of trauma and memory. He turned to the world of creative writing, translating his experiences into language. His acclaimed book, <em className="text-cyan-400">The Shape of Our Faces No Longer Matters</em>, and his work in publications like <em className="text-cyan-400">The New York Times</em> and the <em className="text-cyan-400">Best New Poets</em> anthology turned into a new mission: to build a narrative bridge between the civilian world and the realities of the veteran experience. He became a recognized voice, performing his work at charity events alongside cultural figures like Jake Gyllenhaal and Adam Driver.
               </p>
+
+              {/* Literary Publications Gallery */}
+              <div className="my-16 p-8 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                <h3 className="font-orbitron text-2xl font-bold text-center mb-8">
+                  <span className="text-gradient-gerardo">LITERARY</span> <span className="text-gradient-mena">PUBLICATIONS</span>
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* NYT Article 1 */}
+                  <div className="group cursor-pointer">
+                    <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                      <img 
+                        src="/NYT-1.png" 
+                        alt="New York Times - A Much-Needed Treat, and a Welcome Surprise"
+                        className="w-full h-48 object-cover rounded-lg mb-3"
+                      />
+                      <h4 className="text-cyan-400 font-semibold text-sm mb-2">New York Times</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">A Much-Needed Treat, and a Welcome Surprise</p>
+                    </div>
+                  </div>
+
+                  {/* NYT Article 2 */}
+                  <div className="group cursor-pointer">
+                    <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                      <img 
+                        src="/NYT-2.png" 
+                        alt="New York Times - The Enemy, Through the Eyes of a Child"
+                        className="w-full h-48 object-cover rounded-lg mb-3"
+                      />
+                      <h4 className="text-cyan-400 font-semibold text-sm mb-2">New York Times</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">'The Enemy,' Through the Eyes of a Child</p>
+                    </div>
+                  </div>
+
+                  {/* Vogue Feature */}
+                  <div className="group cursor-pointer">
+                    <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20">
+                      <img 
+                        src="/Vogue.png" 
+                        alt="Vogue Magazine - Headstrong Project Words of War Benefit"
+                        className="w-full h-48 object-cover rounded-lg mb-3"
+                      />
+                      <h4 className="text-pink-400 font-semibold text-sm mb-2">Vogue Magazine</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">Headstrong Project's Words of War Benefit</p>
+                    </div>
+                  </div>
+
+                  {/* Best New Poets */}
+                  <div className="group cursor-pointer">
+                    <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                      <img 
+                        src="/50BP.png" 
+                        alt="Best New Poets 2011 Anthology"
+                        className="w-full h-48 object-cover rounded-lg mb-3"
+                      />
+                      <h4 className="text-cyan-400 font-semibold text-sm mb-2">Best New Poets</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">2011 Anthology - 50 Emerging Writers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
               <p className="text-lg md:text-xl leading-relaxed">
                 Today, he applies the same strategic principles to the defining system of a new era: artificial intelligence. As a web designer, social media coordinator, and AI Specialist at Army University Press, Tony is a pioneer in the emerging field of Generative Engine Optimization (GEO). He sees AI as a new operational environment with its own rules, patterns, and languages. He designs the frameworks that allow brands to navigate this new terrain, translating their core values into stories that AI understands and amplifies.
