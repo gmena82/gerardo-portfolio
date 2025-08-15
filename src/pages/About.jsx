@@ -6,8 +6,8 @@ function About() {
         <img 
           src="/about-hero.png" 
           alt="Gerardo Tony Mena - Professional portrait"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: '50% 0%' }}
+          className="w-full h-full object-cover object-center"
+          style={{ objectPosition: '50% 20%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-transparent to-gray-900/60"></div>
@@ -18,7 +18,7 @@ function About() {
           {/* About Content */}
           <div className="max-w-4xl mx-auto">
             <h1 className="font-orbitron text-3xl md:text-5xl font-black text-center mb-12">
-              <span className="text-gradient-gerardo">ABOUT</span> <span className="text-gradient-mena">TONY</span>
+              <span className="text-gradient-gerardo">ABOUT GERARDO</span> <span className="text-gradient-mena">"TONY" MENA</span>
             </h1>
             
             <div className="prose prose-lg md:prose-xl max-w-none text-gray-300 leading-relaxed space-y-8">
