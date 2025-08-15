@@ -2,7 +2,7 @@ function About() {
   return (
     <>
       {/* Full-width Hero Image */}
-      <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden mt-8 md:mt-10 lg:mt-14">
+      <div className="relative w-full h-64 md:h-80 lg:h-[80vh] overflow-hidden mt-8 md:mt-10 lg:mt-14">
         <img 
           src="/about-hero.png" 
           alt="Gerardo Tony Mena - Professional portrait"
