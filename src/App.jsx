@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </Layout>
     </Router>
