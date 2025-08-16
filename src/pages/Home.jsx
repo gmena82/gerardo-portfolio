@@ -62,7 +62,7 @@ function Home() {
               muted 
               loop 
               playsInline
-              className="w-full h-full object-cover object-right lg:object-center opacity-40 lg:opacity-100"
+              className="w-full h-full object-cover object-center opacity-90 lg:opacity-100"
             >
               <source src="/hero-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
