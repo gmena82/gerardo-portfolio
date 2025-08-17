@@ -10,7 +10,7 @@ function BlogPost() {
     // For now, we'll load the GEO post directly
     // In the future, this could be expanded to load multiple posts
     if (slug === 'the-future-of-generative-engine-optimization') {
-      setPost({
+      const postData = {
         title: "The Future of Generative Engine Optimization",
         author: "Gerardo Mena",
         date: "2025-08-16",
@@ -105,7 +105,62 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
 ---
 
 *© Gerardo Mena. All rights reserved.*`
-      })
+      }
+      
+      setPost(postData)
+      
+      // Set document title and meta description for SEO
+      document.title = `${postData.title} | Gerardo Mena - AI Strategy & Innovation`
+      
+      // Update meta description
+      let metaDescription = document.querySelector('meta[name="description"]')
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta')
+        metaDescription.name = 'description'
+        document.head.appendChild(metaDescription)
+      }
+      metaDescription.content = postData.excerpt
+      
+      // Add structured data for SEO
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": postData.title,
+        "description": postData.excerpt,
+        "image": `https://www.gerardo-mena.com${postData.heroImage}`,
+        "author": {
+          "@type": "Person",
+          "name": postData.author,
+          "url": "https://www.gerardo-mena.com/about"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gerardo Mena",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.gerardo-mena.com/GM-Logo.png"
+          }
+        },
+        "datePublished": postData.date,
+        "dateModified": postData.date,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://www.gerardo-mena.com/blog/${slug}`
+        },
+        "keywords": postData.tags.join(', '),
+        "articleSection": "AI Strategy",
+        "wordCount": postData.content.split(' ').length
+      }
+      
+      // Add structured data script
+      let structuredDataScript = document.querySelector('script[type="application/ld+json"]')
+      if (!structuredDataScript) {
+        structuredDataScript = document.createElement('script')
+        structuredDataScript.type = 'application/ld+json'
+        document.head.appendChild(structuredDataScript)
+      }
+      structuredDataScript.textContent = JSON.stringify(structuredData)
+      
       setLoading(false)
     } else {
       setLoading(false)
@@ -190,24 +245,76 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
 
         {/* Article Content */}
         <div className="prose prose-lg prose-invert max-w-none">
-          <div 
-            className="blog-content text-gray-300 leading-relaxed"
-            dangerouslySetInnerHTML={{ 
-              __html: post.content
-                .replace(/^# /gm, '<h1 class="font-orbitron text-3xl font-bold text-white mb-6 mt-8">')
-                .replace(/^## /gm, '<h2 class="font-orbitron text-2xl font-bold text-cyan-400 mb-4 mt-8">')
-                .replace(/^### /gm, '<h3 class="font-orbitron text-xl font-bold text-white mb-3 mt-6">')
-                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-cyan-400 font-semibold">$1</strong>')
-                .replace(/^- /gm, '<li class="mb-2">')
-                .replace(/^---$/gm, '<hr class="border-gray-700 my-8">')
-                .replace(/\n\n/g, '</p><p class="mb-4">')
-                .replace(/^(?!<[h|l|s])/gm, '<p class="mb-4">')
-                .replace(/<\/p><p class="mb-4">(<h[1-6])/g, '$1')
-                .replace(/<\/p><p class="mb-4">(<li)/g, '<ul class="list-disc list-inside mb-6 space-y-2">$1')
-                .replace(/(<li.*?>.*?)<\/p>/g, '$1</li>')
-                .replace(/(<li.*?<\/li>)(?!.*<li)/g, '$1</ul>')
-            }}
-          />
+          <div className="blog-content text-gray-300 leading-relaxed space-y-6">
+            {post.content.split('\n\n').map((paragraph, index) => {
+              // Handle H1 headings
+              if (paragraph.startsWith('# ')) {
+                return (
+                  <h1 key={index} className="font-orbitron text-3xl font-bold text-cyan-400 mb-6 mt-8">
+                    {paragraph.replace('# ', '')}
+                  </h1>
+                )
+              }
+              
+              // Handle H2 headings
+              if (paragraph.startsWith('## ')) {
+                return (
+                  <h2 key={index} className="font-orbitron text-2xl font-bold text-cyan-400 mb-4 mt-8">
+                    {paragraph.replace('## ', '')}
+                  </h2>
+                )
+              }
+              
+              // Handle H3 headings
+              if (paragraph.startsWith('### ')) {
+                return (
+                  <h3 key={index} className="font-orbitron text-xl font-bold text-cyan-400 mb-3 mt-6">
+                    {paragraph.replace('### ', '')}
+                  </h3>
+                )
+              }
+              
+              // Handle bullet lists
+              if (paragraph.includes('- **') || paragraph.includes('- ✅')) {
+                const listItems = paragraph.split('\n').filter(line => line.trim().startsWith('- '))
+                return (
+                  <ul key={index} className="list-none space-y-3 mb-6">
+                    {listItems.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <span className="text-pink-400 mr-3 mt-1">•</span>
+                        <span 
+                          className="text-gray-300"
+                          dangerouslySetInnerHTML={{
+                            __html: item.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                          }}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                )
+              }
+              
+              // Handle horizontal rules
+              if (paragraph.trim() === '---') {
+                return <hr key={index} className="border-gray-700 my-8" />
+              }
+              
+              // Handle regular paragraphs
+              if (paragraph.trim() && !paragraph.startsWith('#')) {
+                return (
+                  <p 
+                    key={index} 
+                    className="text-gray-300 leading-relaxed mb-4"
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                    }}
+                  />
+                )
+              }
+              
+              return null
+            })}
+          </div>
         </div>
 
         {/* Author Bio */}
