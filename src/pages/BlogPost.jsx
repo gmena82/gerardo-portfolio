@@ -276,16 +276,20 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
               
               // Handle numbered lists (1. 2. 3. etc.)
               if (/^\d+\.\s/.test(paragraph.trim())) {
-                return (
-                  <p 
-                    key={index} 
-                    className="text-gray-300 leading-relaxed mb-4"
-                    dangerouslySetInnerHTML={{
-                      __html: paragraph.replace(/^(\d+\.\s)(.*)/, '<span class="text-pink-400 font-semibold">$1</span>$2')
-                        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
-                    }}
-                  />
-                )
+                const match = paragraph.match(/^(\d+\.\s)(.*)/)
+                if (match) {
+                  const [, numberPart, contentPart] = match
+                  return (
+                    <p key={index} className="text-gray-300 leading-relaxed mb-4">
+                      <span className="text-pink-400 font-semibold">{numberPart}</span>
+                      <span 
+                        dangerouslySetInnerHTML={{
+                          __html: contentPart.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                        }}
+                      />
+                    </p>
+                  )
+                }
               }
               
               // Handle bullet lists
