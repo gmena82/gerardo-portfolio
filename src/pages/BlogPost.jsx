@@ -102,9 +102,24 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
 - ✅ Monitoring for brand citations/links in AI Overviews, ChatGPT Search, and Perplexity
 - ✅ Thoughtful use of snippet/training controls where needed
 
----
+## Further Reading
 
-*© Gerardo Mena. All rights reserved.*`
+### Research & Documentation
+- [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) - Original research paper and GEO-Bench methodology (arXiv)
+- [Google Search Central - AI Features](https://developers.google.com/search/docs/appearance/ai-overviews) - Official guidance on AI Overviews, eligibility, and snippet controls
+- [Google Structured Data Guidelines](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) - Best practices for JSON-LD implementation
+- [Google E-E-A-T Guidelines](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) - People-first content and expertise signals
+
+### Industry Coverage & Analysis
+- [The Washington Post](https://www.washingtonpost.com/technology/2024/05/30/google-ai-overviews-errors/) - Reporting on AI Overviews reliability challenges
+- [Search Engine Land](https://searchengineland.com/google-ai-overviews-seo-impact-445234) - Industry analysis on AI search reliability and SEO impact
+- [WIRED](https://www.wired.com/story/ai-search-engines-publishers-licensing/) - Publisher licensing trends and attribution economics
+- [Digiday](https://digiday.com/media/publishers-ai-licensing-deals/) - Media industry perspective on AI licensing agreements
+
+### Platform Documentation
+- [OpenAI ChatGPT Search](https://openai.com/index/introducing-chatgpt-search/) - Official announcement and capabilities overview
+- [Perplexity AI Overview](https://en.wikipedia.org/wiki/Perplexity_AI) - Product overview and citations-first approach
+- [ACM Digital Library](https://dl.acm.org/doi/10.1145/3589335.3651434) - Academic research on generative search optimization`
       }
       
       setPost(postData)
@@ -347,30 +362,6 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
               
               return null
             })}
-          </div>
-        </div>
-
-        {/* Author Bio */}
-        <div className="mt-16 p-8 bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg">
-          <div className="flex items-start gap-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-              GM
-            </div>
-            <div>
-              <h3 className="font-orbitron text-xl font-bold text-white mb-2">Gerardo Mena</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Former Navy SARC turned AI strategist and published author. Featured in The New York Times, Vogue, and Best New Poets 2011. 
-                Currently leading AI marketing innovation with 19M+ YouTube views and $1M+ raised for charity initiatives.
-              </p>
-              <div className="flex gap-4 mt-4">
-                <Link to="/about" className="text-cyan-400 hover:text-white transition-colors">
-                  Learn More →
-                </Link>
-                <Link to="/contact" className="text-cyan-400 hover:text-white transition-colors">
-                  Get in Touch →
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
 
