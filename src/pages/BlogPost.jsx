@@ -265,16 +265,7 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                 )
               }
               
-              // Handle H3 headings
-              if (paragraph.startsWith('### ')) {
-                return (
-                  <h3 key={index} className="font-orbitron text-xl font-bold text-cyan-400 mb-3 mt-6">
-                    {paragraph.replace('### ', '')}
-                  </h3>
-                )
-              }
-              
-              // Handle numbered lists (1. 2. 3. etc.)
+              // Handle numbered lists (1. 2. 3. etc.) - MUST come before H3 handling
               if (/^\d+\.\s/.test(paragraph.trim())) {
                 const match = paragraph.match(/^(\d+\.\s)(.*)/)
                 if (match) {
@@ -290,6 +281,30 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                     </p>
                   )
                 }
+              }
+              
+              // Handle H3 headings
+              if (paragraph.startsWith('### ')) {
+                const headerText = paragraph.replace('### ', '')
+                
+                // Check if this H3 starts with a number (like "1. " or "1) ")
+                const numberedMatch = headerText.match(/^(\d+[.)]\s)(.*)/)
+                if (numberedMatch) {
+                  const [, numberPart, contentPart] = numberedMatch
+                  return (
+                    <h3 key={index} className="font-orbitron text-xl font-bold mb-3 mt-6">
+                      <span className="text-pink-400">{numberPart}</span>
+                      <span className="text-gray-300">{contentPart}</span>
+                    </h3>
+                  )
+                }
+                
+                // Regular H3 header (cyan color)
+                return (
+                  <h3 key={index} className="font-orbitron text-xl font-bold text-cyan-400 mb-3 mt-6">
+                    {headerText}
+                  </h3>
+                )
               }
               
               // Handle bullet lists
