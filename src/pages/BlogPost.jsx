@@ -274,6 +274,20 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                 )
               }
               
+              // Handle numbered lists (1. 2. 3. etc.)
+              if (/^\d+\.\s/.test(paragraph.trim())) {
+                return (
+                  <p 
+                    key={index} 
+                    className="text-gray-300 leading-relaxed mb-4"
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph.replace(/^(\d+\.\s)(.*)/, '<span class="text-pink-400 font-semibold">$1</span>$2')
+                        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                    }}
+                  />
+                )
+              }
+              
               // Handle bullet lists
               if (paragraph.includes('- **') || paragraph.includes('- ✅')) {
                 const listItems = paragraph.split('\n').filter(line => line.trim().startsWith('- '))
