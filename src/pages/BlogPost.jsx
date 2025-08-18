@@ -314,6 +314,16 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                   )
                 }
                 
+                // Check if this is a Further Reading subsection (Research & Documentation, etc.)
+                const furtherReadingSections = ['Research & Documentation', 'Industry Coverage & Analysis', 'Platform Documentation']
+                if (furtherReadingSections.includes(headerText)) {
+                  return (
+                    <h3 key={index} className="font-orbitron text-xl font-bold text-cyan-400 mb-3 mt-6">
+                      {headerText}
+                    </h3>
+                  )
+                }
+                
                 // Regular H3 header (cyan color)
                 return (
                   <h3 key={index} className="font-orbitron text-xl font-bold text-cyan-400 mb-3 mt-6">
@@ -322,22 +332,47 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                 )
               }
               
-              // Handle bullet lists
-              if (paragraph.includes('- **') || paragraph.includes('- ✅')) {
+              // Handle bullet lists with links
+              if (paragraph.includes('- [') || paragraph.includes('- **') || paragraph.includes('- ✅')) {
                 const listItems = paragraph.split('\n').filter(line => line.trim().startsWith('- '))
                 return (
                   <ul key={index} className="list-none space-y-3 mb-6">
-                    {listItems.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <span className="text-pink-400 mr-3 mt-1">•</span>
-                        <span 
-                          className="text-gray-300"
-                          dangerouslySetInnerHTML={{
-                            __html: item.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
-                          }}
-                        />
-                      </li>
-                    ))}
+                    {listItems.map((item, itemIndex) => {
+                      const cleanItem = item.replace('- ', '')
+                      
+                      // Handle markdown links [text](url)
+                      if (cleanItem.includes('[') && cleanItem.includes('](')) {
+                        const linkProcessed = cleanItem.replace(
+                          /\[([^\]]+)\]\(([^)]+)\)/g, 
+                          '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-white transition-colors underline">$1</a>'
+                        )
+                        
+                        return (
+                          <li key={itemIndex} className="flex items-start">
+                            <span className="text-pink-400 mr-3 mt-1">•</span>
+                            <span 
+                              className="text-gray-300"
+                              dangerouslySetInnerHTML={{
+                                __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                              }}
+                            />
+                          </li>
+                        )
+                      }
+                      
+                      // Handle regular bullet items
+                      return (
+                        <li key={itemIndex} className="flex items-start">
+                          <span className="text-pink-400 mr-3 mt-1">•</span>
+                          <span 
+                            className="text-gray-300"
+                            dangerouslySetInnerHTML={{
+                              __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                            }}
+                          />
+                        </li>
+                      )
+                    })}
                   </ul>
                 )
               }
