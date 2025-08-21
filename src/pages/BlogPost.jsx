@@ -104,22 +104,65 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
 
 ## Further Reading
 
-### Research & Documentation
-- [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) - Original research paper and GEO-Bench methodology
-- [Google Search Central - AI Features](https://developers.google.com/search/docs/appearance/ai-overviews) - Official guidance on AI Overviews and snippet controls
-- [Google Structured Data Guidelines](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) - Best practices for JSON-LD implementation
-- [Google E-E-A-T Guidelines](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) - People-first content and expertise signals
-
-### Industry Coverage & Analysis
-- [The Washington Post](https://www.washingtonpost.com/technology/2024/05/30/google-ai-overviews-errors/) - Reporting on AI Overviews reliability challenges
-- [Search Engine Land](https://searchengineland.com/google-ai-overviews-seo-impact-445234) - Industry analysis on AI search reliability and SEO impact
-- [WIRED](https://www.wired.com/story/ai-search-engines-publishers-licensing/) - Publisher licensing trends and attribution economics
-- [Digiday](https://digiday.com/media/publishers-ai-licensing-deals/) - Media industry perspective on AI licensing agreements
-
-### Platform Documentation
-- [OpenAI ChatGPT Search](https://openai.com/index/introducing-chatgpt-search/) - Official announcement and capabilities overview
-- [Perplexity AI Overview](https://en.wikipedia.org/wiki/Perplexity_AI) - Product overview and citations-first approach
-- [ACM Digital Library](https://dl.acm.org/doi/10.1145/3589335.3651434) - Academic research on generative search optimization`
+<section class="further-reading" aria-labelledby="further-reading-heading">
+  <ul class="further-reading-list">
+    <li>
+      <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">
+        GEO: Generative Engine Optimization (arXiv, 2023)
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.google.com/search/docs/appearance/ai-overviews" target="_blank" rel="noopener noreferrer">
+        Google Search Central - AI Features (Google, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer">
+        Google Structured Data Guidelines (Google, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">
+        Google E-E-A-T Guidelines (Google, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://www.washingtonpost.com/technology/2024/05/30/google-ai-overviews-errors/" target="_blank" rel="noopener noreferrer">
+        AI Overviews reliability challenges (The Washington Post, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://searchengineland.com/google-ai-overviews-seo-impact-445234" target="_blank" rel="noopener noreferrer">
+        AI search reliability and SEO impact (Search Engine Land, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://www.wired.com/story/ai-search-engines-publishers-licensing/" target="_blank" rel="noopener noreferrer">
+        Publisher licensing trends and attribution economics (WIRED, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://digiday.com/media/publishers-ai-licensing-deals/" target="_blank" rel="noopener noreferrer">
+        Media industry perspective on AI licensing (Digiday, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" rel="noopener noreferrer">
+        OpenAI ChatGPT Search announcement (OpenAI, 2024)
+      </a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Perplexity_AI" target="_blank" rel="noopener noreferrer">
+        Perplexity AI Overview (Wikipedia)
+      </a>
+    </li>
+    <li>
+      <a href="https://dl.acm.org/doi/10.1145/3589335.3651434" target="_blank" rel="noopener noreferrer">
+        Academic research on generative search optimization (ACM Digital Library, 2024)
+      </a>
+    </li>
+  </ul>
+</section>`
       }
       
       setPost(postData)
@@ -423,6 +466,35 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                       )
                     })}
                   </ul>
+                )
+              }
+              
+              // Handle HTML sections (like Further Reading)
+              if (paragraph.includes('<section') && paragraph.includes('</section>')) {
+                return (
+                  <div 
+                    key={index}
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph
+                    }}
+                  />
+                )
+              }
+              
+              // Handle simple markdown links (not in bullet lists)
+              if (paragraph.includes('[') && paragraph.includes('](') && !paragraph.includes('- [')) {
+                const linkProcessed = paragraph.replace(
+                  /\[([^\]]+)\]\(([^)]+)\)/g, 
+                  '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-400 transition-colors underline block mb-2">$1</a>'
+                )
+                
+                return (
+                  <div 
+                    key={index}
+                    dangerouslySetInnerHTML={{
+                      __html: linkProcessed
+                    }}
+                  />
                 )
               }
               

@@ -278,3 +278,32 @@
   }
 }
 
+
+
+/* Further Reading Section Styles */
+.further-reading { 
+  margin-top: 2rem; 
+}
+
+.further-reading-list { 
+  margin: 0.5rem 0 0 1.25rem; 
+  padding: 0; 
+  list-style: none;
+}
+
+.further-reading-list li { 
+  margin: 0.25rem 0; 
+  line-height: 1.6; 
+}
+
+.further-reading a { 
+  color: #d1d5db !important; /* Force gray-300 color */
+  text-decoration: underline; 
+  transition: color 0.2s ease;
+}
+
+.further-reading a:hover { 
+  color: #22d3ee !important; /* Cyan color on hover */
+  text-decoration: none; 
+}
+
