@@ -105,8 +105,8 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
 ## Further Reading
 
 ### Research & Documentation
-- [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) - Original research paper and GEO-Bench methodology (arXiv)
-- [Google Search Central - AI Features](https://developers.google.com/search/docs/appearance/ai-overviews) - Official guidance on AI Overviews, eligibility, and snippet controls
+- [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) - Original research paper and GEO-Bench methodology
+- [Google Search Central - AI Features](https://developers.google.com/search/docs/appearance/ai-overviews) - Official guidance on AI Overviews and snippet controls
 - [Google Structured Data Guidelines](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) - Best practices for JSON-LD implementation
 - [Google E-E-A-T Guidelines](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) - People-first content and expertise signals
 
@@ -332,7 +332,56 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
                 )
               }
               
-              // Handle bullet lists with links
+              // Handle multi-line bullet sections (like Further Reading)
+              if (paragraph.includes('\n- [') || (paragraph.includes('- [') && paragraph.includes('\n'))) {
+                const lines = paragraph.split('\n')
+                const bulletItems = lines.filter(line => line.trim().startsWith('- '))
+                
+                if (bulletItems.length > 0) {
+                  return (
+                    <ul key={index} className="list-none space-y-3 mb-6">
+                      {bulletItems.map((item, itemIndex) => {
+                        const cleanItem = item.replace('- ', '')
+                        
+                        // Handle markdown links [text](url)
+                        if (cleanItem.includes('[') && cleanItem.includes('](')) {
+                          const linkProcessed = cleanItem.replace(
+                            /\[([^\]]+)\]\(([^)]+)\)/g, 
+                            '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-white transition-colors underline">$1</a>'
+                          )
+                          
+                          return (
+                            <li key={itemIndex} className="flex items-start">
+                              <span className="text-pink-400 mr-3 mt-1">•</span>
+                              <span 
+                                className="text-gray-300"
+                                dangerouslySetInnerHTML={{
+                                  __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                                }}
+                              />
+                            </li>
+                          )
+                        }
+                        
+                        // Handle regular bullet items
+                        return (
+                          <li key={itemIndex} className="flex items-start">
+                            <span className="text-pink-400 mr-3 mt-1">•</span>
+                            <span 
+                              className="text-gray-300"
+                              dangerouslySetInnerHTML={{
+                                __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                              }}
+                            />
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )
+                }
+              }
+              
+              // Handle bullet lists with links (single line)
               if (paragraph.includes('- [') || paragraph.includes('- **') || paragraph.includes('- ✅')) {
                 const listItems = paragraph.split('\n').filter(line => line.trim().startsWith('- '))
                 return (
