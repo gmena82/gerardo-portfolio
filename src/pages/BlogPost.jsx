@@ -15,7 +15,7 @@ function BlogPost() {
         author: "Gerardo Mena",
         date: "2025-08-16",
         excerpt: "Search is morphing into something new. Instead of sending you to a list of websites, generative engines synthesize answers from multiple sources and present a summarized, conversational response. Discover how GEO can boost your site's visibility by up to 40%.",
-        heroImage: "/GEO-Feature.png",
+        heroImage: '/blog-1.webp',
         tags: ["AI", "SEO", "GEO", "Search", "Strategy"],
         readTime: "8 min read",
         content: `# The Future of Generative Engine Optimization
