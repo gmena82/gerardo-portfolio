@@ -26,7 +26,7 @@ function Home() {
               </a>
               <a 
                 href="#" 
-                className="btn-secondary-glow bg-[#ff3d68] text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="btn-secondary-glow bg-gradient-to-r from-cyan-400 to-teal-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 View portfolio
               </a>
