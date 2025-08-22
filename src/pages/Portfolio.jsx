@@ -150,6 +150,109 @@ function Portfolio() {
           </div>
         </div>
 
+        {/* Graphic Design Services Section */}
+        <div className="mb-16">
+          <h2 className="font-orbitron text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+            <span className="text-teal-400">GRAPHIC DESIGN</span> <span className="text-teal-500">SERVICES</span>
+          </h2>
+          
+          <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-8 mb-8">
+            <p className="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+              My graphic design services deliver eye-catching, on-brand visuals that have elevated magazines, sports teams, gyms, athletes, professional podcasts, and multiple 501(c)(3) nonprofits alike. By combining AI-enhanced workflows with conversion-focused layouts, I've driven over 3 million website visitors across digital channels and 19 million YouTube views—boosting engagement, strengthening brand recognition, and ensuring content performs in both social feeds and LLM-powered search results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* LLMSO Face 1 */}
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg overflow-hidden hover:border-teal-400/40 transition-all duration-300 group">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/LLMSO-Face-1.avif" 
+                  alt="Military to Civilian Transformation - Split Face Design"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-orbitron text-sm font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                  Military-Civilian Transformation
+                </h3>
+                <p className="text-gray-400 text-xs">
+                  Powerful split-face design showcasing the duality of military service and civilian life
+                </p>
+              </div>
+            </div>
+
+            {/* LLMSO Face 2 */}
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg overflow-hidden hover:border-teal-400/40 transition-all duration-300 group">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/LLMSO-Face-2.avif" 
+                  alt="Business Professional to Warrior - Split Face Design"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-orbitron text-sm font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                  Executive-Warrior Duality
+                </h3>
+                <p className="text-gray-400 text-xs">
+                  Striking visual metaphor for leadership that bridges business and military excellence
+                </p>
+              </div>
+            </div>
+
+            {/* SEO Money Tank */}
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg overflow-hidden hover:border-teal-400/40 transition-all duration-300 group">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/seo-money-tank.avif" 
+                  alt="SEO Dominance Tank with Money - Marketing Metaphor"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-orbitron text-sm font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                  SEO Dominance Strategy
+                </h3>
+                <p className="text-gray-400 text-xs">
+                  Bold metaphor for crushing the competition with strategic SEO and content marketing
+                </p>
+              </div>
+            </div>
+
+            {/* Animated GIF */}
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg overflow-hidden hover:border-teal-400/40 transition-all duration-300 group">
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src="/DP-2.gif" 
+                  alt="Dynamic Animated Design Element"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-orbitron text-sm font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                  Dynamic Motion Graphics
+                </h3>
+                <p className="text-gray-400 text-xs">
+                  Engaging animated content designed for social media and digital platforms
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <div className="bg-gray-800/50 rounded-lg p-6 inline-block">
+              <p className="text-teal-400 font-semibold text-lg mb-2">Portfolio Impact:</p>
+              <div className="flex flex-wrap justify-center gap-6 text-sm">
+                <span className="text-white">📈 3M+ Website Visitors</span>
+                <span className="text-white">🎥 19M+ YouTube Views</span>
+                <span className="text-white">🏢 Multiple 501(c)(3) Organizations</span>
+                <span className="text-white">🎯 AI-Enhanced Workflows</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Video Portfolio Showcase */}
         <div className="mb-20">
           <h2 className="font-orbitron text-2xl md:text-3xl font-bold text-white mb-8 text-center">
