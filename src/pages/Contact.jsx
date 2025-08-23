@@ -65,7 +65,7 @@ function Contact() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h1 className="font-orbitron text-3xl md:text-5xl font-black mb-8">
-            <span className="text-gradient-gerardo">GET IN</span> <span className="text-gradient-mena">TOUCH</span>
+            <span className="text-gradient-gerardo">CONTACT</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Ready to transform your vision into reality? Let's discuss how strategic AI innovation can elevate your brand and achieve your objectives.
@@ -238,30 +238,6 @@ function Contact() {
                   <p className="text-gray-300 leading-relaxed">
                     Keynote presentations on AI innovation, veteran leadership, and the intersection of technology and storytelling.
                   </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8">
-              <h2 className="font-orbitron text-2xl font-bold text-white mb-6">Response Time</h2>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span className="text-gray-300">Initial response within 24 hours</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span className="text-gray-300">Detailed proposal within 48 hours</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span className="text-gray-300">Project kickoff within one week</span>
                 </div>
               </div>
             </div>

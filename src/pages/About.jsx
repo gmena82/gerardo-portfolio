@@ -18,7 +18,7 @@ function About() {
           {/* About Content */}
           <div className="max-w-4xl mx-auto">
             <h1 className="font-orbitron text-3xl md:text-5xl font-black text-center mb-12">
-              <span className="text-gradient-gerardo">ABOUT GERARDO</span> <span className="text-gradient-mena">"TONY" MENA</span>
+              <span className="text-gradient-gerardo">BIO</span>
             </h1>
             
             <div className="prose prose-lg md:prose-xl max-w-none text-gray-300 leading-relaxed space-y-8">
@@ -46,7 +46,7 @@ function About() {
             {/* About CTA */}
             <div className="text-center mt-16">
               <a 
-                href="#" 
+                href="/contact" 
                 className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg inline-block"
               >
                 Ready to work with a proven strategist?
