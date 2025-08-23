@@ -20,12 +20,14 @@ function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <a 
                 href="/contact" 
+                target="_blank"
                 className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Let's work together
               </a>
               <a 
                 href="/portfolio" 
+                target="_blank"
                 className="btn-secondary-glow bg-gradient-to-r from-cyan-400 to-teal-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 View portfolio
@@ -99,6 +101,7 @@ function Home() {
           <div className="flex justify-center">
             <a 
               href="/contact" 
+              target="_blank"
               className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg"
             >
               Click here to bring your amazing ideas to life!

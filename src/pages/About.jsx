@@ -47,6 +47,7 @@ function About() {
             <div className="text-center mt-16">
               <a 
                 href="/contact" 
+                target="_blank"
                 className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg inline-block"
               >
                 Ready to work with a proven strategist?
