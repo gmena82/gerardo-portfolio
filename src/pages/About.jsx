@@ -4,8 +4,8 @@ function About() {
       {/* Full-width Hero Image */}
       <div className="relative w-full h-64 md:h-80 lg:h-[80vh] overflow-hidden mt-8 md:mt-10 lg:mt-14">
         <img 
-          src="/about-hero.png" 
-          alt="Gerardo Tony Mena - Professional portrait"
+          src="/Gerardo-Mena-Future.webp" 
+          alt="Gerardo Tony Mena - Cyberpunk futuristic portrait"
           className="w-full h-full object-cover object-center"
           style={{ objectPosition: '50% 20%' }}
         />
