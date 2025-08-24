@@ -74,7 +74,7 @@ function Portfolio() {
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-white mb-8 text-center">
             <span className="text-pink-400">KEY</span> <span className="text-pink-500">ACHIEVEMENTS</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-10">
             <div className="p-6 bg-gray-900/40 rounded-lg border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-3 font-orbitron">19M+</div>
               <div className="text-gray-300 text-base font-semibold">YouTube Views Generated</div>
@@ -86,6 +86,22 @@ function Portfolio() {
             <div className="p-6 bg-gray-900/40 rounded-lg border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-3 font-orbitron">$1M+</div>
               <div className="text-gray-300 text-base font-semibold">Raised for Charity Events & 501c3 Organizations</div>
+            </div>
+          </div>
+          
+          {/* YouTube Analytics Proof */}
+          <div className="text-center">
+            <h3 className="font-orbitron text-xl font-bold text-cyan-400 mb-4">YouTube Analytics Dashboard</h3>
+            <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 inline-block">
+              <img 
+                src="/YT-views.png" 
+                alt="YouTube Analytics showing 19.4M views, 3.2M watch hours, 115K subscribers, and 332M impressions" 
+                className="max-w-full h-auto rounded-lg shadow-lg"
+              />
+              <p className="text-gray-300 text-sm mt-4 max-w-2xl">
+                Real YouTube analytics demonstrating proven ability to generate massive reach: 
+                <span className="text-cyan-400 font-semibold"> 19.4M views, 3.2M watch hours, 115K+ subscribers, and 332M impressions</span>
+              </p>
             </div>
           </div>
         </div>
