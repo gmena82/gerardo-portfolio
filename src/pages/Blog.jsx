@@ -42,7 +42,7 @@ function Blog() {
           {[
             {
               title: "What a Week!",
-              excerpt: "A productive week featuring our first commissioned documentary piece for a nonprofit and a presentation on AI imagery at the Harding Project conference.",
+              excerpt: "Wow. What a productive week! We kicked things off with our first commissioned documentary style piece for a nonprofit and followed up with a presentation on AI imagery at the Harding Project conference.",
               date: "August 25, 2025",
               category: "Updates",
               slug: "what-a-week",
@@ -56,7 +56,7 @@ function Blog() {
               category: "AI Strategy",
               slug: "the-future-of-generative-engine-optimization",
               published: true,
-              image: "/GEO-Feature.png"
+              image: "/blog-1.webp"
             }
           ].map((post, index) => (
             <article key={index} className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300 cursor-pointer group">

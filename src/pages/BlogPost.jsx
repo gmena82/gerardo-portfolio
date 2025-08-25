@@ -17,9 +17,7 @@ function BlogPost() {
         heroImage: '/blog-photo.png',
         tags: ["Updates", "Documentary", "AI", "Conference"],
         readTime: "3 min read",
-        content: `# What a Week!
-
-Wow. What a productive week!
+        content: `Wow. What a productive week!
 
 We kicked things off with our first commissioned documentary style piece for a nonprofit that needed it—fast—for a horse show in Las Vegas. It was headed to the jumbotron, which meant every pixel had to be perfect. We tightened the cut and survived brutal high end render times.
 
@@ -549,34 +547,34 @@ GEO will blend editorial, design, data, and engineering: writers craft answer-fr
           </div>
         </div>
 
-        {/* Related Posts */}
+        {/* Related Links */}
         <div className="mt-16">
-          <h3 className="font-orbitron text-2xl font-bold text-white mb-8">More Insights</h3>
+          <h3 className="font-orbitron text-2xl font-bold text-white mb-8">Explore More</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link to="/blog" className="group">
+            <Link to="/portfolio" className="group" target="_blank">
               <article className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
-                <span className="px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-medium">
-                  Leadership
+                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">
+                  Portfolio
                 </span>
                 <h4 className="font-orbitron text-lg font-bold text-white mt-4 mb-2 group-hover:text-cyan-400 transition-colors">
-                  Leadership Lessons from Special Operations
+                  View My Work
                 </h4>
                 <p className="text-gray-400 text-sm">
-                  Applying military decision-making frameworks to high-stakes business environments.
+                  Explore my portfolio showcasing AI strategy, graphic design, and documentary work with proven results.
                 </p>
               </article>
             </Link>
             
-            <Link to="/blog" className="group">
+            <Link to="/contact" className="group" target="_blank">
               <article className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
-                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">
-                  AI Strategy
+                <span className="px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-medium">
+                  Contact
                 </span>
                 <h4 className="font-orbitron text-lg font-bold text-white mt-4 mb-2 group-hover:text-cyan-400 transition-colors">
-                  AI and the Art of Strategic Storytelling
+                  Let's Work Together
                 </h4>
                 <p className="text-gray-400 text-sm">
-                  How artificial intelligence is transforming the way brands connect with their audiences.
+                  Ready to bring your ideas to life? Get in touch to discuss your next project or collaboration.
                 </p>
               </article>
             </Link>
