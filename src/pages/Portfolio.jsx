@@ -337,16 +337,16 @@ function Portfolio() {
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="aspect-video mb-4 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/za3EynewTrU"
-                    title="PTSD Doesn't Just Go Away - AI Video"
+                    src="https://www.youtube.com/embed/bhayN5HrItc"
+                    title="New Video Portfolio Showcase"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <h4 className="font-orbitron text-lg font-bold text-white mb-2">PTSD Doesn't Just Go Away - AI Video</h4>
-                <p className="text-gray-300 text-sm mb-4">AI-enhanced video addressing veteran mental health with cinematic storytelling</p>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Latest Video Production</h4>
+                <p className="text-gray-300 text-sm mb-4">Professional video production showcasing advanced cinematography and storytelling techniques</p>
               </div>
             </div>
           </div>
