@@ -41,80 +41,55 @@ function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {[
             {
+              title: "What a Week!",
+              excerpt: "A productive week featuring our first commissioned documentary piece for a nonprofit and a presentation on AI imagery at the Harding Project conference.",
+              date: "August 25, 2025",
+              category: "Updates",
+              slug: "what-a-week",
+              published: true,
+              image: "/blog-photo.png"
+            },
+            {
               title: "The Future of Generative Engine Optimization",
               excerpt: "How AI is reshaping the way we think about content strategy and brand narrative in the digital age.",
               date: "August 16, 2025",
               category: "AI Strategy",
               slug: "the-future-of-generative-engine-optimization",
-              published: true
-            },
-            {
-              title: "Leadership Lessons from Special Operations",
-              excerpt: "Applying military decision-making frameworks to high-stakes business environments.",
-              date: "January 10, 2025",
-              category: "Leadership",
-              slug: "leadership-lessons-from-special-operations",
-              published: false
-            },
-            {
-              title: "Bridging Worlds: From Combat to Creative Writing",
-              excerpt: "The unexpected parallels between military service and artistic expression.",
-              date: "January 5, 2025",
-              category: "Personal",
-              slug: "bridging-worlds-combat-to-creative-writing",
-              published: false
-            },
-            {
-              title: "AI and the Art of Strategic Storytelling",
-              excerpt: "How artificial intelligence is transforming the way brands connect with their audiences.",
-              date: "December 28, 2024",
-              category: "AI Strategy",
-              slug: "ai-and-strategic-storytelling",
-              published: false
-            },
-            {
-              title: "The Veteran's Guide to Tech Innovation",
-              excerpt: "Leveraging military experience to drive technological advancement and startup success.",
-              date: "December 20, 2024",
-              category: "Innovation",
-              slug: "veterans-guide-to-tech-innovation",
-              published: false
-            },
-            {
-              title: "Building Resilient Brand Narratives",
-              excerpt: "Creating stories that withstand market volatility and cultural shifts.",
-              date: "December 15, 2024",
-              category: "Branding",
-              slug: "building-resilient-brand-narratives",
-              published: false
+              published: true,
+              image: "/GEO-Feature.png"
             }
           ].map((post, index) => (
-            <article key={index} className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300 cursor-pointer group">
-              <div className="mb-4">
-                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">
-                  {post.category}
-                </span>
-              </div>
-              <h2 className="font-orbitron text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                {post.title}
-              </h2>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 text-xs">{post.date}</span>
-                {post.published ? (
+            <article key={index} className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300 cursor-pointer group">
+              {post.image && (
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">
+                    {post.category}
+                  </span>
+                </div>
+                <h2 className="font-orbitron text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  {post.title}
+                </h2>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500 text-xs">{post.date}</span>
                   <Link 
                     to={`/blog/${post.slug}`}
                     className="text-cyan-400 text-sm font-medium hover:text-white transition-colors"
                   >
                     Read More →
                   </Link>
-                ) : (
-                  <span className="text-gray-600 text-sm font-medium">
-                    Coming Soon
-                  </span>
-                )}
+                </div>
               </div>
             </article>
           ))}
