@@ -94,26 +94,6 @@ function Blog() {
             </article>
           ))}
         </div>
-
-        {/* Newsletter Signup */}
-        <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8 text-center">
-          <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Get the latest insights on AI strategy, leadership, and innovation delivered directly to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
-            />
-            <button className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   )
