@@ -42,7 +42,7 @@ function Blog() {
           {[
             {
               title: "What a Week!",
-              excerpt: "Wow. What a productive week! We kicked things off with our first commissioned documentary style piece for a nonprofit and followed up with a presentation on AI imagery at the Harding Project conference.",
+              excerpt: "We rushed a documentary onto a Vegas jumbotron, then briefed the Harding Project on AI—exhausting, humbling, and worth it.",
               date: "August 25, 2025",
               category: "Updates",
               slug: "what-a-week",

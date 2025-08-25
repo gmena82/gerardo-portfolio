@@ -13,7 +13,7 @@ function BlogPost() {
         title: "What a Week!",
         author: "Gerardo Mena",
         date: "2025-08-25",
-        excerpt: "A productive week featuring our first commissioned documentary piece for a nonprofit and a presentation on AI imagery at the Harding Project conference.",
+        excerpt: "We rushed a documentary onto a Vegas jumbotron, then briefed the Harding Project on AI—exhausting, humbling, and worth it.",
         heroImage: '/blog-photo.png',
         tags: ["Updates", "Documentary", "AI", "Conference"],
         readTime: "3 min read",
