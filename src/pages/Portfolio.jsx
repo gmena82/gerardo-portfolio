@@ -231,7 +231,7 @@ function Portfolio() {
                   SEO Dominance Strategy
                 </h3>
                 <p className="text-gray-400 text-xs">
-                  Bold metaphor for crushing the competition with strategic SEO and content marketing
+                  Striking visuals for blog posts or magazine articles to stop the scroll and get readers' eyeballs on the page.
                 </p>
               </div>
             </div>
