@@ -54,7 +54,7 @@ function Layout({ children }) {
               to="/about"
               className={`transition-colors ${isActive('/about') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
             >
-              About Us
+              About Me
             </Link>
             <Link 
               to="/portfolio"
@@ -121,7 +121,7 @@ function Layout({ children }) {
             onClick={closeMobileMenu}
             className={`text-lg transition-colors ${isActive('/about') ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
           >
-            About Us
+            About Me
           </Link>
           <Link 
             to="/portfolio"
@@ -200,7 +200,7 @@ function Layout({ children }) {
                   to="/about"
                   className={`block transition-colors text-sm ${isActive('/about') ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
                 >
-                  About Us
+                  About Me
                 </Link>
                 <Link 
                   to="/portfolio"

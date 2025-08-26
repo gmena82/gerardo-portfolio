@@ -18,7 +18,7 @@ function About() {
           {/* About Content */}
           <div className="max-w-4xl mx-auto">
             <h1 className="font-orbitron text-3xl md:text-5xl font-black text-center mb-12">
-              <span className="text-gradient-gerardo">BIO</span>
+              <span className="text-gradient-gerardo">ABOUT ME</span>
             </h1>
             
             <div className="prose prose-lg md:prose-xl max-w-none text-gray-300 leading-relaxed space-y-8">
@@ -29,6 +29,57 @@ function About() {
               <p className="text-lg md:text-xl leading-relaxed">
                 His journey began as a U.S. Navy Special Amphibious Reconnaissance Corpsman (SARC), one of the military's most elite and challenging roles. Embedded with Reconnaissance Marines, his mission was a study in duality: to be a master of both combat tactics and advanced trauma medicine. Operating far behind enemy lines, he learned to make life-or-death decisions, and to find order and calm in the most unpredictable circumstances. For his actions in Iraq, he was awarded the Navy Achievement Medal with Valor.
               </p>
+
+              {/* Military Service Photos */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Navy-Ball-2.png" 
+                    alt="Navy Ball - Military formal event"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Navy Ball</h3>
+                    <p className="text-gray-400 text-xs">Formal military ceremony celebrating naval traditions and service</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Chuck-Norris.png" 
+                    alt="Military unit with Chuck Norris visit"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Special Operations Unit</h3>
+                    <p className="text-gray-400 text-xs">Elite military unit during special operations training and morale visit</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Iraq-07.png" 
+                    alt="Iraq deployment 2007 - Military unit"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Iraq Deployment 2007</h3>
+                    <p className="text-gray-400 text-xs">Combat deployment with reconnaissance unit in Iraq theater of operations</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Mongolia.png" 
+                    alt="Mongolia training exercise - Military personnel"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Mongolia Training Exercise</h3>
+                    <p className="text-gray-400 text-xs">International military training exercise and cultural exchange mission</p>
+                  </div>
+                </div>
+              </div>
               
               <p className="text-lg md:text-xl leading-relaxed">
                 Returning home, he faced a new system to decode: the complex landscape of trauma and memory. He turned to the world of creative writing, translating his experiences into language. His acclaimed book, <em className="text-cyan-400">The Shape of Our Faces No Longer Matters</em>, and his work in publications like <em className="text-cyan-400">The New York Times</em> and the <em className="text-cyan-400">Best New Poets</em> anthology turned into a new mission: to build a narrative bridge between the civilian world and the realities of the veteran experience. He became a recognized voice, performing his work at charity events alongside cultural figures like Jake Gyllenhaal and Adam Driver.
