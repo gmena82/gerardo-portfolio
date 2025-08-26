@@ -93,6 +93,57 @@ function About() {
               <p className="text-lg md:text-xl leading-relaxed">
                 From decoding enemy movements in Iraq to decoding the algorithms of search engines, the mission has remained the same: do the work, understand the systems, and achieve the objectives. Whether you need to build a resilient brand story, develop a cutting-edge AI marketing strategy, or learn the principles of high-stakes leadership, Gerardo "Tony" Mena brings a unique perspective forged in conflict, honed by art, and proven in the marketplace.
               </p>
+
+              {/* Civilian Career & Literary Photos */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Seth-Myers.png" 
+                    alt="Seth Meyers event - Literary career"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Literary Career</h3>
+                    <p className="text-gray-400 text-xs">Performing alongside celebrities and fellow writers at literary events and charity fundraisers</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/BoysatState.png" 
+                    alt="Boys at State wrestling event"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Family & Community</h3>
+                    <p className="text-gray-400 text-xs">Supporting young athletes and building community connections through youth sports programs</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/WordsofWar.png" 
+                    alt="Words of War publication feature"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Published Author</h3>
+                    <p className="text-gray-400 text-xs">Featured in major publications and literary reviews, bridging military experience with civilian understanding</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
+                  <img 
+                    src="/Luke-State.png" 
+                    alt="Luke State wrestling championship"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Coaching & Mentorship</h3>
+                    <p className="text-gray-400 text-xs">Applying military leadership principles to develop young champions and future leaders</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* About CTA */}
