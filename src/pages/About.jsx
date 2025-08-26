@@ -34,10 +34,9 @@ function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Navy-Ball-2.png" 
+                    src="/Navy-Ball-2-F.png" 
                     alt="Navy Ball - Military formal event"
                     className="w-full h-64 object-cover"
-                    style={{ objectPosition: '50% 20%' }}
                   />
                   <div className="p-4">
                     <h3 className="font-orbitron text-sm font-bold text-white mb-2">Navy Ball</h3>
@@ -47,7 +46,7 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Chuck-Norris.png" 
+                    src="/Chuck-Norris-F.png" 
                     alt="Military unit with Chuck Norris visit"
                     className="w-full h-64 object-cover"
                   />
@@ -59,8 +58,8 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Iraq-07.png" 
-                    alt="Iraq deployment 2007 - Military unit"
+                    src="/Iraq-07-F.png" 
+                    alt="Iraq deployment 2007 - Combat unit"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -71,7 +70,7 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Mongolia.png" 
+                    src="/Mongolia-F.png" 
                     alt="Mongolia training exercise - Military personnel"
                     className="w-full h-64 object-cover"
                   />
@@ -98,7 +97,7 @@ function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Seth-Myers.png" 
+                    src="/Seth-Myers-F.png" 
                     alt="Seth Meyers event - Literary career"
                     className="w-full h-64 object-cover"
                   />
@@ -110,7 +109,7 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/BoysatState.png" 
+                    src="/BoysatState-F.png" 
                     alt="Boys at State wrestling event"
                     className="w-full h-64 object-cover"
                   />
@@ -122,7 +121,7 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/WordsofWar.png" 
+                    src="/WordsofWar-F.png" 
                     alt="Words of War publication feature"
                     className="w-full h-64 object-cover"
                   />
@@ -134,7 +133,7 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Luke-State.png" 
+                    src="/Luke-State-F.png" 
                     alt="Luke State wrestling championship"
                     className="w-full h-64 object-cover"
                   />
