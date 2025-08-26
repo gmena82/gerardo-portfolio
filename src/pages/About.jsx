@@ -7,7 +7,7 @@ function About() {
           src="/Gerardo-Mena-Future.webp" 
           alt="Gerardo Tony Mena - Cyberpunk futuristic portrait"
           className="w-full h-full object-cover object-center"
-          style={{ objectPosition: '50% 20%' }}
+          style={{ objectPosition: '50% 10%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/80"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-transparent to-gray-900/60"></div>
@@ -37,10 +37,11 @@ function About() {
                     src="/Navy-Ball-2.png" 
                     alt="Navy Ball - Military formal event"
                     className="w-full h-64 object-cover"
+                    style={{ objectPosition: '50% 20%' }}
                   />
                   <div className="p-4">
                     <h3 className="font-orbitron text-sm font-bold text-white mb-2">Navy Ball</h3>
-                    <p className="text-gray-400 text-xs">Formal military ceremony celebrating naval traditions and service</p>
+                    <p className="text-gray-400 text-xs">Having a blast with my best friends after our Iraq deployment in 2007.</p>
                   </div>
                 </div>
 
@@ -51,8 +52,8 @@ function About() {
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
-                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Special Operations Unit</h3>
-                    <p className="text-gray-400 text-xs">Elite military unit during special operations training and morale visit</p>
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Chuck Norris Visit</h3>
+                    <p className="text-gray-400 text-xs">Chuck Norris visited after one of our platoonmates was severely wounded and he was kind enough to hold up a sign for him that we sent him.</p>
                   </div>
                 </div>
 
@@ -75,8 +76,8 @@ function About() {
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
-                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Mongolia Training Exercise</h3>
-                    <p className="text-gray-400 text-xs">International military training exercise and cultural exchange mission</p>
+                    <h3 className="font-orbitron text-sm font-bold text-white mb-2">Mongolia 2005</h3>
+                    <p className="text-gray-400 text-xs">Our Recon unit was assigned to protect President Bush during his Mongolia stop on his Asia tour. Good times were had all around. I miss these days.</p>
                   </div>
                 </div>
               </div>
