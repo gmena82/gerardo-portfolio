@@ -299,16 +299,16 @@ function Portfolio() {
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="aspect-video mb-4 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/Rva960UYb8Y"
-                    title="Black Insurance Group Advertisement"
+                    src="https://www.youtube.com/embed/Hll582-mC_4"
+                    title="Fleitz Family Tile Showcase"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Black Insurance Group Advertisement</h4>
-                <p className="text-gray-300 text-sm mb-4">Insurance company advertisement optimized for social media engagement</p>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Fleitz Family Tile Showcase</h4>
+                <p className="text-gray-300 text-sm mb-4">Professional tile installation showcase featuring family business craftsmanship and expertise</p>
               </div>
             </div>
           </div>
@@ -337,16 +337,16 @@ function Portfolio() {
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="aspect-video mb-4 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/bhayN5HrItc"
-                    title="New Video Portfolio Showcase"
+                    src="https://www.youtube.com/embed/3cSjVVlYiw0"
+                    title="Dark Horse Elite Episode 1"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Latest Video Production</h4>
-                <p className="text-gray-300 text-sm mb-4">Professional video production showcasing advanced cinematography and storytelling techniques</p>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Dark Horse Elite Episode 1</h4>
+                <p className="text-gray-300 text-sm mb-4">Extended documentary-style episode showcasing veteran entrepreneurship and leadership development</p>
               </div>
             </div>
           </div>
