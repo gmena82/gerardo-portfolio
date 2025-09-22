@@ -294,10 +294,10 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                   const [, numberPart, contentPart] = match
                   return (
                     <p key={index} className="text-gray-300 leading-relaxed mb-4">
-                      <span className="text-pink-400 font-semibold">{numberPart}</span>
-                      <span 
+                      <span className="font-semibold">{numberPart}</span>
+                      <span
                         dangerouslySetInnerHTML={{
-                          __html: contentPart.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                          __html: contentPart.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                         }}
                       />
                     </p>
@@ -315,7 +315,7 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                   const [, numberPart, contentPart] = numberedMatch
                   return (
                     <h3 key={index} className="font-orbitron text-xl font-bold mb-3 mt-6">
-                      <span className="text-pink-400">{numberPart}</span>
+                      <span className="font-semibold">{numberPart}</span>
                       <span className="text-gray-300">{contentPart}</span>
                     </h3>
                   )
@@ -359,25 +359,25 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                           
                           return (
                             <li key={itemIndex} className="flex items-start">
-                              <span className="text-pink-400 mr-3 mt-1">•</span>
-                              <span 
+                              <span className="mr-3 mt-1 font-semibold text-gray-200">•</span>
+                              <span
                                 className="text-gray-300"
                                 dangerouslySetInnerHTML={{
-                                  __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                                  __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                                 }}
                               />
                             </li>
                           )
                         }
-                        
+
                         // Handle regular bullet items
                         return (
                           <li key={itemIndex} className="flex items-start">
-                            <span className="text-pink-400 mr-3 mt-1">•</span>
-                            <span 
+                            <span className="mr-3 mt-1 font-semibold text-gray-200">•</span>
+                            <span
                               className="text-gray-300"
                               dangerouslySetInnerHTML={{
-                                __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                                __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                               }}
                             />
                           </li>
@@ -405,11 +405,11 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                         
                         return (
                           <li key={itemIndex} className="flex items-start">
-                            <span className="text-pink-400 mr-3 mt-1">•</span>
-                            <span 
+                            <span className="mr-3 mt-1 font-semibold text-gray-200">•</span>
+                            <span
                               className="text-gray-300"
                               dangerouslySetInnerHTML={{
-                                __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                                __html: linkProcessed.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                               }}
                             />
                           </li>
@@ -419,11 +419,11 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                       // Handle regular bullet items
                       return (
                         <li key={itemIndex} className="flex items-start">
-                          <span className="text-pink-400 mr-3 mt-1">•</span>
-                          <span 
+                          <span className="mr-3 mt-1 font-semibold text-gray-200">•</span>
+                          <span
                             className="text-gray-300"
                             dangerouslySetInnerHTML={{
-                              __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                              __html: cleanItem.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                             }}
                           />
                         </li>
@@ -474,7 +474,7 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
                     key={index} 
                     className="text-gray-300 leading-relaxed mb-4"
                     dangerouslySetInnerHTML={{
-                      __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-pink-400 font-semibold">$1</strong>')
+                      __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
                     }}
                   />
                 )
@@ -505,7 +505,7 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
             
             <Link to="/contact" className="group" target="_blank">
               <article className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
-                <span className="px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-medium">
+                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full font-medium">
                   Contact
                 </span>
                 <h4 className="font-orbitron text-lg font-bold text-white mt-4 mb-2 group-hover:text-cyan-400 transition-colors">
