@@ -86,9 +86,9 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
 
 ## Sources and Further Reading
 
-- [The Beginner's Guide to Generative Engine Optimization (GEO) - AIOSEO](https://aioseo.com/blog/generative-engine-optimization/)
+- [The Beginner's Guide to Generative Engine Optimization (GEO) - AIOSEO](https://aioseo.com/generative-engine-optimization-geo/)
 - [Generative Engine Optimization: What It Is & How to Prepare | HubSpot](https://blog.hubspot.com/marketing/generative-engine-optimization)
-- [Generative Engine Optimization (GEO): The Future of Search? | WordStream](https://www.wordstream.com/blog/ws/generative-engine-optimization)
+- [Generative Engine Optimization (GEO): The Future of Search? | WordStream](https://www.wordstream.com/blog/generative-engine-optimization)
 - [What Is Generative Engine Optimization (GEO)? | Search Engine Land](https://searchengineland.com/what-is-generative-engine-optimization-geo-444418)
 - [Generative Engine Optimization: How to Optimize for AI Overviews | Semrush](https://www.semrush.com/blog/generative-engine-optimization/)
 
