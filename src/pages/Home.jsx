@@ -57,8 +57,8 @@ function Home() {
         </div>
 
         {/* Right Side: Hero Video */}
-        <div className="absolute inset-0 lg:left-1/3 lg:right-8 w-full lg:w-auto h-full">
-          <div className="relative w-full h-full bg-black rounded-none lg:rounded-lg overflow-hidden border-0 lg:border-4 lg:border-black shadow-2xl">
+        <div className="absolute inset-0 w-full h-full">
+          <div className="relative w-full h-full bg-black rounded-none overflow-hidden border-0 lg:border-4 lg:border-black shadow-2xl">
             <video 
               autoPlay 
               muted 
