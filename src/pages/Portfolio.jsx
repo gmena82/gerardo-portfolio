@@ -1,4 +1,14 @@
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function Portfolio() {
+  usePageMetadata({
+    title: "Portfolio | Gerardo Mena's AI Marketing, Writing & Design Work",
+    description:
+      'Review military-honed leadership, award-winning publications, and high-impact AI marketing campaigns that have generated millions of views and visitors.',
+    image: '/GEO-Feature.png',
+    url: 'https://www.gerardo-mena.com/portfolio'
+  })
+
   const literaryWorks = [
     {
       title: "A Much-Needed Treat, and a Welcome Surprise",

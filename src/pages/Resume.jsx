@@ -1,4 +1,14 @@
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function Resume() {
+  usePageMetadata({
+    title: 'Resume | Gerardo Mena – Web Developer & AI Strategist',
+    description:
+      'Download the comprehensive resume for Gerardo Mena, highlighting 10+ years in web development, Section 508 leadership, AI content creation, and digital strategy.',
+    image: '/social-media.png',
+    url: 'https://www.gerardo-mena.com/resume'
+  })
+
   return (
     <section className="py-20 px-8 pt-32">
       <div className="container mx-auto max-w-5xl">

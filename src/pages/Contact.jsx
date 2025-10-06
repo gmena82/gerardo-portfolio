@@ -1,6 +1,16 @@
 import { useState } from 'react'
 
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function Contact() {
+  usePageMetadata({
+    title: 'Contact Gerardo Mena | Start Your AI-Driven Project',
+    description:
+      'Connect with Gerardo Mena to build AI-powered marketing, storytelling, and digital experiences tailored to your mission.',
+    image: '/social-media.png',
+    url: 'https://www.gerardo-mena.com/contact'
+  })
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
