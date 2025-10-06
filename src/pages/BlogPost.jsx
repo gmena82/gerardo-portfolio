@@ -1,22 +1,56 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function BlogPost() {
   const { slug } = useParams()
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const pageUrl = `https://www.gerardo-mena.com/blog/${slug}`
+
+  usePageMetadata(
+    post
+      ? {
+          title: `${post.title} | Gerardo Mena Blog`,
+          description: post.excerpt,
+          image: post.heroImage,
+          url: pageUrl,
+          type: 'article',
+          publishedTime: post.publishedTime,
+          modifiedTime: post.updatedTime || post.publishedTime
+        }
+      : null
+  )
+
   useEffect(() => {
-    // Load blog posts based on slug
+    setLoading(true)
+    setPost(null)
+
+    const removeStructuredData = () => {
+      const existing = document.getElementById('structured-data-article')
+      if (existing) {
+        existing.remove()
+      }
+    }
+
+    removeStructuredData()
+
+    let postData = null
+
     if (slug === 'what-a-week') {
-      const postData = {
-        title: "What a Week!",
-        author: "Gerardo Mena",
-        date: "2025-08-25",
-        excerpt: "We rushed a documentary onto a Vegas jumbotron, then briefed the Harding Project on AI—exhausting, humbling, and worth it.",
+      postData = {
+        title: 'What a Week!',
+        author: 'Gerardo Mena',
+        date: 'August 25, 2025',
+        publishedTime: '2025-08-25T00:00:00.000Z',
+        updatedTime: '2025-08-25T00:00:00.000Z',
+        excerpt:
+          'We rushed a documentary onto a Vegas jumbotron, then briefed the Harding Project on AI—exhausting, humbling, and worth it.',
         heroImage: '/blog-photo.png',
-        tags: ["Updates", "Documentary", "AI", "Conference"],
-        readTime: "3 min read",
+        tags: ['Updates', 'Documentary', 'AI', 'Conference'],
+        readTime: '3 min read',
         content: `Wow. What a productive week!
 
 We kicked things off with our first commissioned documentary style piece for a nonprofit that needed it—fast—for a horse show in Las Vegas. It was headed to the jumbotron, which meant every pixel had to be perfect. We tightened the cut and survived brutal high end render times.
@@ -33,17 +67,18 @@ I left grateful to be a part of all of it.
 
 Exhausting? Yes. Worth it? Absolutely. On to the next project. Our queue is already full again.`
       }
-      setPost(postData)
-      setLoading(false)
     } else if (slug === 'the-future-of-generative-engine-optimization') {
-      const postData = {
-        title: "The Future of Generative Engine Optimization",
-        author: "Gerardo Mena",
-        date: "2025-08-16",
-        excerpt: "The digital marketing landscape is in the midst of a seismic shift. Traditional SEO is making way for Generative Engine Optimization (GEO). As AI becomes integrated into search, understanding GEO is no longer futuristic—it's an immediate necessity.",
+      postData = {
+        title: 'The Future of Generative Engine Optimization',
+        author: 'Gerardo Mena',
+        date: 'August 16, 2025',
+        publishedTime: '2025-08-16T00:00:00.000Z',
+        updatedTime: '2025-08-16T00:00:00.000Z',
+        excerpt:
+          "The digital marketing landscape is in the midst of a seismic shift. Traditional SEO is making way for Generative Engine Optimization (GEO). As AI becomes integrated into search, understanding GEO is no longer futuristic—it's an immediate necessity.",
         heroImage: '/blog-1.webp',
-        tags: ["AI", "SEO", "GEO", "Search", "Strategy"],
-        readTime: "8 min read",
+        tags: ['AI', 'SEO', 'GEO', 'Search', 'Strategy'],
+        readTime: '8 min read',
         content: `# The Future of Search: A Deep Dive into Generative Engine Optimization (GEO)
 
 The digital marketing landscape is in the midst of a seismic shift. Traditional search engine optimization (SEO), long the cornerstone of online visibility, is making way for a new paradigm: Generative Engine Optimization (GEO). As artificial intelligence (AI) and large language models (LLMs) become increasingly integrated into our online experiences, understanding and implementing GEO is no longer a futuristic concept—it's an immediate necessity for any brand that wants to remain relevant.
@@ -127,67 +162,54 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
 - [Generative Engine Optimization (GEO): The Future of Search? | WordStream](https://www.wordstream.com/blog/generative-engine-optimization)
 - [What Is Generative Engine Optimization (GEO)? | Search Engine Land](https://searchengineland.com/what-is-generative-engine-optimization-geo-444418)
 - [Generative Engine Optimization: How to Optimize for AI Overviews | Semrush](https://www.semrush.com/blog/generative-engine-optimization/)`
-      };
-
-      
-      setPost(postData)
-      
-      // Set document title and meta description for SEO
-      document.title = `${postData.title} | Gerardo Mena - AI Strategy & Innovation`
-      
-      // Update meta description
-      let metaDescription = document.querySelector('meta[name="description"]')
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta')
-        metaDescription.name = 'description'
-        document.head.appendChild(metaDescription)
       }
-      metaDescription.content = postData.excerpt
-      
-      // Add structured data for SEO
+    }
+
+    if (postData) {
+      setPost(postData)
+      setLoading(false)
+
+      const baseUrl = 'https://www.gerardo-mena.com'
       const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": postData.title,
-        "description": postData.excerpt,
-        "image": `https://www.gerardo-mena.com${postData.heroImage}`,
-        "author": {
-          "@type": "Person",
-          "name": postData.author,
-          "url": "https://www.gerardo-mena.com/about"
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: postData.title,
+        description: postData.excerpt,
+        image: `${baseUrl}${postData.heroImage}`,
+        author: {
+          '@type': 'Person',
+          name: postData.author,
+          url: `${baseUrl}/about`
         },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Gerardo Mena",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.gerardo-mena.com/GM-Logo.png"
+        publisher: {
+          '@type': 'Organization',
+          name: 'Gerardo Mena',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${baseUrl}/GM-Logo.png`
           }
         },
-        "datePublished": postData.date,
-        "dateModified": postData.date,
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `https://www.gerardo-mena.com/blog/${slug}`
+        datePublished: postData.publishedTime,
+        dateModified: postData.updatedTime || postData.publishedTime,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${baseUrl}/blog/${slug}`
         },
-        "keywords": postData.tags.join(', '),
-        "articleSection": "AI Strategy",
-        "wordCount": postData.content.split(' ').length
+        keywords: postData.tags.join(', '),
+        articleSection: 'AI Strategy',
+        wordCount: postData.content.split(' ').length
       }
-      
-      // Add structured data script
-      let structuredDataScript = document.querySelector('script[type="application/ld+json"]')
-      if (!structuredDataScript) {
-        structuredDataScript = document.createElement('script')
-        structuredDataScript.type = 'application/ld+json'
-        document.head.appendChild(structuredDataScript)
-      }
+
+      const structuredDataScript = document.createElement('script')
+      structuredDataScript.type = 'application/ld+json'
+      structuredDataScript.id = 'structured-data-article'
       structuredDataScript.textContent = JSON.stringify(structuredData)
-      
-      setLoading(false)
+      document.head.appendChild(structuredDataScript)
     } else {
       setLoading(false)
     }
+
+    return removeStructuredData
   }, [slug])
 
   if (loading) {

@@ -1,4 +1,15 @@
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function Home() {
+  usePageMetadata({
+    title: 'Gerardo Mena | AI Strategist, Creative Technologist & Storyteller',
+    description:
+      "Explore Gerardo Mena's award-winning blend of AI strategy, storytelling, and digital production that has generated millions of views and funding for clients.",
+    image: '/Gerardo-Mena-Future.webp',
+    url: 'https://www.gerardo-mena.com/',
+    type: 'website'
+  })
+
   return (
     <>
       {/* Hero Section */}

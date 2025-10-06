@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom'
 
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function Blog() {
+  usePageMetadata({
+    title: 'Blog | Insights on AI Strategy & Creative Leadership',
+    description:
+      'Read the latest articles from Gerardo Mena on AI-driven marketing, creative leadership, and the future of generative search.',
+    image: '/GEO-Feature.png',
+    url: 'https://www.gerardo-mena.com/blog'
+  })
+
   return (
     <section className="py-20 px-8 pt-32">
       <div className="container mx-auto max-w-6xl">

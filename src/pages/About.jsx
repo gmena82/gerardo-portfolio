@@ -1,4 +1,14 @@
+import usePageMetadata from '../hooks/usePageMetadata'
+
 function About() {
+  usePageMetadata({
+    title: 'About Gerardo Mena | Veteran Strategist & AI Innovator',
+    description:
+      'Discover the journey of Gerardo “Tony” Mena—from elite special operations to acclaimed author and AI strategist leading next-generation storytelling.',
+    image: '/Gerardo-Mena-Future.webp',
+    url: 'https://www.gerardo-mena.com/about'
+  })
+
   return (
     <>
       {/* Full-width Hero Image */}
