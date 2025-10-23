@@ -199,7 +199,7 @@ function Resume() {
                 viewport={tightViewport}
               >
                 <svg
-                  className="w-5 h-5 text-cyan-400 animate-pulse-spin-jiggle"
+                  className="w-5 h-5 text-cyan-400 animate-quick-pulse-pause"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -231,7 +231,7 @@ function Resume() {
                 viewport={tightViewport}
               >
                 <svg
-                  className="w-4 h-4 text-cyan-400 flex-shrink-0 animate-pulse-spin-jiggle"
+                  className="w-4 h-4 text-cyan-400 flex-shrink-0 animate-quick-pulse-pause"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -281,7 +281,7 @@ function Resume() {
                       viewport={tightViewport}
                     >
                       <svg
-                        className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0 animate-pulse-spin-jiggle"
+                        className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0 animate-quick-pulse-pause"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -347,7 +347,7 @@ function Resume() {
                 viewport={tightViewport}
               >
                 <svg
-                  className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0 animate-pulse-spin-jiggle"
+                  className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0 animate-quick-pulse-pause"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
