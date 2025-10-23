@@ -124,7 +124,6 @@ function Home() {
             <div className="w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl border border-cyan-500/40">
               <video
                 className="w-full h-full"
-                controls
                 autoPlay
                 loop
                 muted
