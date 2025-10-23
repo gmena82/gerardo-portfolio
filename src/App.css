@@ -161,45 +161,41 @@
   box-shadow: 0 0 25px rgba(125, 249, 255, 0.7), 0 0 45px rgba(125, 249, 255, 0.4);
 }
 
-.animate-pulse-spin-fade {
-  animation: pulse-spin-fade 4s infinite linear;
-  display: inline-block;
+@keyframes pulse-spin-jiggle {
+  /* Pulse Phase (0% - 25%) */
+  0%   { transform: scale(1) rotate(0deg) translateX(0); }
+  12.5% { transform: scale(1.2) rotate(0deg) translateX(0); }
+  25%  { transform: scale(1) rotate(0deg) translateX(0); }
+
+  /* Spin Phase (25% - 75%) */
+  75%  { transform: scale(1) rotate(360deg) translateX(0); }
+
+  /* Jiggle Phase (75% - 100%) */
+  80%  { transform: scale(1) rotate(360deg) translateX(-3px); }
+  85%  { transform: scale(1) rotate(360deg) translateX(3px); }
+  90%  { transform: scale(1) rotate(360deg) translateX(-2px); }
+  95%  { transform: scale(1) rotate(360deg) translateX(2px); }
+  100% { transform: scale(1) rotate(360deg) translateX(0); }
 }
 
-.hover\:animate-pulse-spin-fade:hover {
-  animation: pulse-spin-fade 4s infinite linear;
+/* Base animation class */
+.animate-pulse-spin-jiggle {
+  animation-name: pulse-spin-jiggle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   display: inline-block;
+  animation-fill-mode: forwards;
 }
 
-@keyframes pulse-spin-fade {
-  0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  12.5% {
-    transform: scale(1.2) rotate(0deg);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1) rotate(360deg);
-    opacity: 1;
-  }
-  75% {
-    transform: scale(1) rotate(360deg);
-    opacity: 0;
-  }
-  76% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
+/* --- Optional: Hover version --- */
+.hover\:animate-pulse-spin-jiggle:hover {
+  animation-name: pulse-spin-jiggle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  display: inline-block;
+  animation-fill-mode: forwards;
 }
 
 /* Secondary Button Glow Effect */
