@@ -110,13 +110,27 @@ function Home() {
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               target="_blank"
               className="btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg"
             >
               Click here to bring your amazing ideas to life!
             </a>
+          </div>
+
+          {/* Featured Fire Project Video */}
+          <div className="mt-12 flex justify-center">
+            <div className="w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl border border-cyan-500/40">
+              <video
+                className="w-full h-full"
+                controls
+                poster="/Gerardo-Mena-Future.webp"
+              >
+                <source src="/Fire-s.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </section>
