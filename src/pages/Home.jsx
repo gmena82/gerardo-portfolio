@@ -125,6 +125,10 @@ function Home() {
               <video
                 className="w-full h-full"
                 controls
+                autoPlay
+                loop
+                muted
+                playsInline
                 poster="/Gerardo-Mena-Future.webp"
               >
                 <source src="/Fire-s.mp4" type="video/mp4" />
