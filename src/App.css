@@ -198,7 +198,7 @@
 /* Base animation class */
 .animate-quick-pulse-pause {
   animation-name: quick-pulse-pause;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   display: inline-block;
@@ -208,7 +208,7 @@
 /* --- Optional: Hover version --- */
 .hover\:animate-quick-pulse-pause:hover {
   animation-name: quick-pulse-pause;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   display: inline-block;
