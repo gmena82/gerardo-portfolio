@@ -161,6 +161,23 @@
   box-shadow: 0 0 25px rgba(125, 249, 255, 0.7), 0 0 45px rgba(125, 249, 255, 0.4);
 }
 
+@keyframes pulse-border-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 6px 1px rgba(236, 72, 153, 0.3);
+    border-color: rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px rgba(236, 72, 153, 0.45);
+    border-color: rgba(236, 72, 153, 0.45);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border-glow 3s infinite ease-in-out;
+  position: relative;
+}
+
 @keyframes quick-pulse-pause {
   0%,
   100% {
