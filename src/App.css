@@ -338,8 +338,53 @@
   transition: color 0.2s ease;
 }
 
-.further-reading a:hover { 
+.further-reading a:hover {
   color: #22d3ee !important; /* Cyan color on hover */
-  text-decoration: none; 
+  text-decoration: none;
+}
+
+@keyframes border-scan {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-border-scan {
+  position: relative;
+  overflow: hidden;
+  padding: 2px;
+  border: none !important;
+  z-index: 0;
+}
+
+.animate-border-scan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(236, 72, 153, 0.3),
+    rgba(244, 114, 182, 0.8),
+    rgba(236, 72, 153, 0.3)
+  );
+  background-size: 50% 100%;
+  animation: border-scan 4s linear infinite;
+}
+
+.border-scan-content {
+  background: linear-gradient(to right, rgba(17, 24, 39, 0.5), rgba(31, 41, 55, 0.5));
+  backdrop-filter: blur(4px);
+  border-radius: calc(0.75rem - 2px);
+  padding: calc(2.5rem - 2px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
