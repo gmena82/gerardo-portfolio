@@ -162,14 +162,15 @@
 }
 
 @keyframes pulse-border-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 6px 1px rgba(236, 72, 153, 0.3);
-    border-color: rgba(236, 72, 153, 0.3);
+  0%, 100% {
+    /* Slightly brighter base state */
+    box-shadow: 0 0 7px 1px rgba(236, 72, 153, 0.35);
+    border-color: rgba(236, 72, 153, 0.35);
   }
   50% {
-    box-shadow: 0 0 18px 6px rgba(236, 72, 153, 0.45);
-    border-color: rgba(236, 72, 153, 0.45);
+    /* More noticeable peak glow */
+    box-shadow: 0 0 20px 7px rgba(236, 72, 153, 0.55);
+    border-color: rgba(236, 72, 153, 0.55);
   }
 }
 
