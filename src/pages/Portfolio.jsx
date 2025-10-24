@@ -80,7 +80,7 @@ function Portfolio() {
         </div>
 
         {/* Key Achievements - Moved to Top */}
-        <div className="animate-border-scan rounded-xl mb-20">
+        <div className="animate-border-scan animate-pulse-border rounded-xl mb-20">
           <div className="border-scan-content">
             <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-white mb-8 text-center">
               <span className="text-pink-400">KEY</span> <span className="text-pink-500">ACHIEVEMENTS</span>
