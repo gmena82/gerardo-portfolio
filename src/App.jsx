@@ -8,6 +8,8 @@ import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import './App.css'
+import './styles/glass-buttons.css'
+import ButtonsDemo from './components/ButtonsDemo.jsx'
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
+        {/* Glass Buttons demo — remove when integrated */}
+        <div style={{ padding: '2rem' }}>
+          <ButtonsDemo />
+        </div>
       </Layout>
     </Router>
   )
