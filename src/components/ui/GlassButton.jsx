@@ -1,7 +1,6 @@
-// src/components/ui/GlassButton.jsx
-// Lightweight React component (no external deps).
-// Uses the CSS in src/styles/glass-buttons.css
-
+// Enhanced GlassButton: adds 'animated' and 'glow' controls.
+// animated: boolean -> when true, applies data-animated="shimmer"
+// glow: "pink" | "none" (defaults to "pink")
 import React from "react";
 
 export function GlassButton({
@@ -12,6 +11,8 @@ export function GlassButton({
   className = "",
   loading = false,
   disabled = false,
+  animated = false,
+  glow = "pink",
   ...rest
 }) {
   const Component = as === "a" ? "a" : "button";
@@ -22,6 +23,8 @@ export function GlassButton({
     <Component
       className={classes}
       data-variant={variant}
+      data-animated={animated ? "shimmer" : undefined}
+      data-glow={glow !== "none" ? glow : undefined}
       data-loading={loading ? "true" : undefined}
       aria-disabled={as === "a" && isDisabled ? "true" : undefined}
       disabled={as !== "a" ? isDisabled : undefined}

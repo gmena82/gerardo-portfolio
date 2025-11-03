@@ -7,6 +7,7 @@ import Resume from './pages/Resume'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import ButtonsDemo from './components/ButtonsDemo.jsx'
 import './App.css'
 import './styles/glass-buttons.css'
 
@@ -14,6 +15,10 @@ function App() {
   return (
     <Router>
       <Layout>
+        {/* Glass Buttons demo — remove when integrated */}
+        <div style={{ padding: '2rem' }}>
+          <ButtonsDemo />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
