@@ -161,6 +161,56 @@
   box-shadow: 0 0 25px rgba(125, 249, 255, 0.7), 0 0 45px rgba(125, 249, 255, 0.4);
 }
 
+.glass-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(13, 148, 136, 0.05));
+  color: #defdfd;
+  border: 1px solid rgba(125, 249, 255, 0.35);
+  border-radius: 0.9rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px rgba(13, 148, 136, 0.22);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(13, 148, 136, 0.04));
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(13, 148, 136, 0.3);
+  border-color: rgba(125, 249, 255, 0.55);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.22), rgba(13, 148, 136, 0.1));
+  color: #f5feff;
+}
+
+.glass-button:focus-visible {
+  outline: 2px solid rgba(125, 249, 255, 0.7);
+  outline-offset: 4px;
+}
+
+.glass-button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(13, 148, 136, 0.25);
+}
+
 @keyframes pulse-border-glow {
   0%, 100% {
     /* Slightly brighter base state */
