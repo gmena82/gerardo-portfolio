@@ -139,7 +139,7 @@
 
 /* H1 Gradient Text - Gerardo */
 .text-gradient-gerardo {
-  background-image: linear-gradient(90deg, #7df9ff, #14b8a6);
+  background-image: linear-gradient(90deg, #0284c7, #7df9ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -147,7 +147,7 @@
 
 /* H1 Gradient Text - Mena */
 .text-gradient-mena {
-  background-image: linear-gradient(90deg, #7df9ff, #14b8a6);
+  background-image: linear-gradient(90deg, #0284c7, #7df9ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -454,5 +454,59 @@
   border-radius: calc(0.75rem - 2px);
   padding: calc(2.5rem - 2px);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Blue Glow Button Style */
+.blue-glow-button {
+  --glow-color: rgb(125, 249, 255); /* Cyan blue */
+  --glow-spread-color: rgba(56, 189, 248, 0.4); /* Sky blue - reduced opacity */
+  --enhanced-glow-color: rgb(186, 230, 253); /* Light sky blue */
+  --btn-color: rgb(0, 0, 0); /* Black */
+
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 0.4em 0.1em var(--glow-color),
+    0 0 0.8em 0.3em var(--glow-spread-color),
+    inset 0 0 0.4em 0.1em var(--glow-color);
+  text-shadow: 0 0 0.3em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  overflow: visible;
+}
+
+.blue-glow-button::after {
+  display: none; /* Remove the extended shadow */
+}
+
+.blue-glow-button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 0.5em 0.15em var(--glow-color),
+    0 0 1em 0.4em var(--glow-spread-color),
+    inset 0 0 0.5em 0.15em var(--glow-color);
+}
+
+.blue-glow-button:active {
+  box-shadow: 0 0 0.3em 0.1em var(--glow-color),
+    0 0 0.7em 0.3em var(--glow-spread-color),
+    inset 0 0 0.3em 0.1em var(--glow-color);
+}
+
+/* Transparent variant for hero section buttons */
+.blue-glow-button-transparent {
+  background-color: rgba(0, 0, 0, 0.33) !important;
+}
+
+.blue-glow-button-transparent:hover {
+  background-color: rgba(125, 249, 255, 0.8) !important;
 }
 

@@ -31,7 +31,7 @@ function Layout({ children }) {
       </a>
 
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-30 p-4 md:px-8">
+      <header className="absolute top-0 left-0 right-0 z-30 p-4 md:p-6 md:px-8">
         <div className="container mx-auto flex justify-between items-center">
           <Link 
             to="/"
