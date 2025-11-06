@@ -12,11 +12,11 @@ function About() {
   return (
     <>
       {/* Full-width Hero Image */}
-      <div className="relative w-full h-64 md:h-80 lg:h-[80vh] overflow-hidden mt-8 md:mt-10 lg:mt-14">
+      <div className="relative w-full h-64 md:h-80 lg:h-[80vh] overflow-hidden pt-32">
         <img 
           src="/Gerardo-Mena-Future.webp" 
           alt="Gerardo Tony Mena - Cyberpunk futuristic portrait"
-          className="w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ objectPosition: '50% 10%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/80"></div>
@@ -27,7 +27,7 @@ function About() {
         <div className="container mx-auto max-w-6xl">
           {/* About Content */}
           <div className="max-w-4xl mx-auto">
-            <h1 className="font-orbitron text-3xl md:text-5xl font-black text-center mb-12">
+            <h1 className="font-orbitron text-3xl md:text-5xl font-black text-center mb-12 mt-8 md:mt-12">
               <span className="text-gradient-gerardo">ABOUT ME</span>
             </h1>
             
