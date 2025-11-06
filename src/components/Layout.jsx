@@ -43,7 +43,7 @@ function Layout({ children }) {
               className="h-10 w-auto"
             />
           </Link>
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <Link 
               to="/"
               className={`transition-colors ${isActive('/') ? 'text-cyan-400' : 'text-gray-300 hover:text-white'}`}
@@ -92,6 +92,15 @@ function Layout({ children }) {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Backdrop */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
+      )}
 
       {/* Mobile Menu */}
       <div 

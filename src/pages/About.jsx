@@ -12,7 +12,7 @@ function About() {
   return (
     <>
       {/* Full-width Hero Image */}
-      <div className="relative w-full h-64 md:h-80 lg:h-[80vh] overflow-hidden pt-32">
+      <div className="relative w-full h-56 sm:h-64 md:h-80 lg:h-[80vh] overflow-hidden pt-24 sm:pt-32">
         <img 
           src="/Gerardo-Mena-Future.webp" 
           alt="Gerardo Tony Mena - Cyberpunk futuristic portrait"

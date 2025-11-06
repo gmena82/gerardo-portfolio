@@ -118,14 +118,14 @@ function Home() {
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <a
               href="/contact"
               target="_blank"
-              className="blue-glow-button"
-              style={{ fontSize: '18px' }}
+              className="blue-glow-button text-sm md:text-base lg:text-lg"
             >
-              Click here to bring your amazing ideas to life!
+              <span className="hidden sm:inline">Click here to bring your amazing ideas to life!</span>
+              <span className="sm:hidden">Bring your ideas to life!</span>
             </a>
           </div>
 
