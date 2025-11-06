@@ -37,7 +37,7 @@ function Home() {
       <section className="relative min-h-screen flex flex-col lg:flex-row items-center">
         {/* Left Side: Content */}
         <div className="w-full lg:w-1/2 h-full flex items-center justify-center p-8 lg:pl-24 lg:pr-16 z-10">
-          <div className="max-w-xl text-center lg:text-left pt-24 pb-12 lg:pt-0 lg:pb-0">
+          <div className="max-w-xl text-center lg:text-left pt-32 pb-12 lg:pt-32 lg:pb-0">
             <p className="font-orbitron text-cyan-400 text-sm md:text-base font-bold tracking-widest uppercase">
               The AI Revolution
             </p>
@@ -49,18 +49,18 @@ function Home() {
               Published author, AI artist, social media coordinator, and web developer. 
               Has generated millions of views for clients and millions of dollars in seed funding.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8" style={{ overflow: 'visible' }}>
               <a
                 href="/contact"
                 target="_blank"
-                className="glass-button btn-primary-glow font-bold py-3 px-8 transition-all duration-300"
+                className="blue-glow-button blue-glow-button-transparent"
               >
                 Let's work together
               </a>
               <a
                 href="/portfolio"
                 target="_blank"
-                className="glass-button btn-secondary-glow font-bold py-3 px-8 transition-all duration-300"
+                className="blue-glow-button blue-glow-button-transparent"
               >
                 View portfolio
               </a>
@@ -122,7 +122,8 @@ function Home() {
             <a
               href="/contact"
               target="_blank"
-              className="glass-button btn-primary-glow font-bold py-4 px-10 transition-all duration-300 text-lg"
+              className="blue-glow-button"
+              style={{ fontSize: '18px' }}
             >
               Click here to bring your amazing ideas to life!
             </a>
