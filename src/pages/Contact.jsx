@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import usePageMetadata from '../hooks/usePageMetadata'
 
@@ -21,6 +21,31 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
   const [statusMessage, setStatusMessage] = useState('')
+  const [rateLimitRemaining, setRateLimitRemaining] = useState(null)
+
+  // Rate limiting: Check localStorage for recent submission
+  useEffect(() => {
+    const lastSubmission = localStorage.getItem('lastContactSubmission')
+    if (lastSubmission) {
+      const timeSinceLastSubmit = Date.now() - parseInt(lastSubmission)
+      const cooldownPeriod = 60000 // 1 minute cooldown
+      if (timeSinceLastSubmit < cooldownPeriod) {
+        setRateLimitRemaining(Math.ceil((cooldownPeriod - timeSinceLastSubmit) / 1000))
+      }
+    }
+  }, [])
+
+  // Update countdown timer
+  useEffect(() => {
+    if (rateLimitRemaining && rateLimitRemaining > 0) {
+      const timer = setTimeout(() => {
+        setRateLimitRemaining(rateLimitRemaining - 1)
+      }, 1000)
+      return () => clearTimeout(timer)
+    } else if (rateLimitRemaining === 0) {
+      setRateLimitRemaining(null)
+    }
+  }, [rateLimitRemaining])
 
   const handleChange = (e) => {
     setFormData({
@@ -31,6 +56,14 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // Check rate limit
+    if (rateLimitRemaining) {
+      setSubmitStatus('error')
+      setStatusMessage(`Please wait ${rateLimitRemaining} seconds before submitting again.`)
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus('')
     setStatusMessage('')
@@ -55,6 +88,9 @@ function Contact() {
         setSubmitStatus('success')
         setStatusMessage('Thank you for your message! I\'ll get back to you within 24 hours.')
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        // Set rate limit after successful submission
+        localStorage.setItem('lastContactSubmission', Date.now().toString())
+        setRateLimitRemaining(60) // 60 seconds cooldown
       } else {
         const result = await response.json()
         setSubmitStatus('error')
@@ -64,7 +100,7 @@ function Contact() {
     } catch (error) {
       console.error('Form submission error:', error)
       setSubmitStatus('error')
-      setStatusMessage('Network error. Please check your connection and try again, or email me directly at Gerardomena82@live.com.')
+      setStatusMessage('Network error. Please check your connection and try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -190,10 +226,12 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || rateLimitRemaining}
                 className="w-full btn-primary-glow bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                {isSubmitting ? (
+                {rateLimitRemaining ? (
+                  `Please wait ${rateLimitRemaining}s before submitting again`
+                ) : isSubmitting ? (
                   <div className="flex items-center justify-center gap-2">
                     <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -206,18 +244,6 @@ function Contact() {
                 )}
               </button>
             </form>
-            
-            <div className="mt-6 p-4 bg-gray-800/30 rounded-lg border border-gray-600/30">
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                </svg>
-                <p className="text-gray-400 text-sm">
-                  Direct email: <a href="mailto:Gerardomena82@live.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">Gerardomena82@live.com</a>
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Contact Information */}

@@ -159,48 +159,6 @@ function Resume() {
           </p>
         </motion.div>
 
-        {/* Contact Information */}
-        <motion.div
-          className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8 mb-12"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-          viewport={viewport}
-        >
-          <h2 className="font-orbitron text-2xl font-bold text-cyan-400 mb-6">Contact Information</h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-300">
-            {[
-              {
-                label: 'Kansas City, MO 64152',
-                icon: (
-                  <path
-                    fillRule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  ></path>
-                )
-              }
-            ].map((contact, index) => (
-              <motion.div
-                key={contact.label}
-                className="flex items-center gap-3"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 + index * 0.05 }}
-                viewport={tightViewport}
-              >
-                <svg
-                  className="w-5 h-5 text-cyan-400 animate-quick-pulse-pause"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  {contact.icon}
-                </svg>
-                <span>{contact.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Core Competencies */}
         <motion.div
