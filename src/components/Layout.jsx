@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import BackToTop from './BackToTop'
 
 function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -176,6 +177,9 @@ function Layout({ children }) {
       <main id="main-content" className="relative min-h-screen">
         {children}
       </main>
+
+      {/* Back to Top Button */}
+      <BackToTop />
 
       {/* Professional Footer */}
       <footer className="bg-gray-900/50 backdrop-blur-sm border-t border-cyan-500/20 py-12">
