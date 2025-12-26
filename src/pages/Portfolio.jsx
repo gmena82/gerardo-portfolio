@@ -103,16 +103,29 @@ function Portfolio() {
             {/* YouTube Analytics Proof */}
             <div className="text-center">
               <h3 className="font-orbitron text-xl font-bold text-cyan-400 mb-4">YouTube Analytics Dashboard</h3>
-              <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 inline-block">
-                <img
-                  src="/YT-views.png"
-                  alt="YouTube Analytics showing 19.4M views, 3.2M watch hours, 115K subscribers, and 332M impressions"
-                  className="max-w-full h-auto rounded-lg shadow-lg"
-                />
-                <p className="text-gray-300 text-sm mt-4 max-w-2xl">
-                  Real YouTube analytics demonstrating proven ability to generate massive reach:
-                  <span className="text-cyan-400 font-semibold"> 19.4M views, 3.2M watch hours, 115K+ subscribers, and 332M impressions</span>
-                </p>
+              <div className="flex flex-col gap-8 items-center">
+                <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+                  <img
+                    src="/YT-views.png"
+                    alt="YouTube Analytics showing 19.4M views, 3.2M watch hours, 115K subscribers, and 332M impressions"
+                    className="max-w-full h-auto rounded-lg shadow-lg"
+                  />
+                  <p className="text-gray-300 text-sm mt-4 max-w-2xl">
+                    Real YouTube analytics demonstrating proven ability to generate massive reach:
+                    <span className="text-cyan-400 font-semibold"> 19.4M views, 3.2M watch hours, 115K+ subscribers, and 332M impressions</span>
+                  </p>
+                </div>
+                <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+                  <img
+                    src="/YT2-Views-Channel.png"
+                    alt="Second YouTube channel analytics showing over 1 million views - proof of repeatable success across multiple channels"
+                    className="max-w-full h-auto rounded-lg shadow-lg"
+                  />
+                  <p className="text-gray-300 text-sm mt-4 max-w-2xl">
+                    <span className="text-cyan-400 font-semibold">Not a fluke.</span> This is a second channel with over 1 million views—proving our strategies are
+                    <span className="text-cyan-400 font-semibold"> repeatable, scalable, and built on real expertise</span>, not luck.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -296,16 +309,16 @@ function Portfolio() {
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="aspect-video mb-4 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/aZQgLb2cLiE"
-                    title="Aesthetic Tile Showcase 2025"
+                    src="https://www.youtube.com/embed/hbZnUxdueNY"
+                    title="Aesthetic Tile Social Short"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Aesthetic Tile Showcase 2025</h4>
-                <p className="text-gray-300 text-sm mb-4">Professional tile showcase with dynamic camera movements and polished color grading</p>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Aesthetic Tile Social Short</h4>
+                <p className="text-gray-300 text-sm mb-4">Scroll-stopping vertical content optimized for social media engagement and brand awareness</p>
               </div>
 
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
@@ -334,16 +347,16 @@ function Portfolio() {
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
                 <div className="aspect-video mb-4 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/WRnwW_EJXes"
-                    title="Dark Horse Elite 501c3"
+                    src="https://www.youtube.com/embed/XEpKyKCcM8I"
+                    title="Myth Breakers: Are Tile Remodels Too Expensive?"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Dark Horse Elite 501c3</h4>
-                <p className="text-gray-300 text-sm mb-4">Immersive 60-90 second nonprofit campaign designed for funding presentations</p>
+                <h4 className="font-orbitron text-lg font-bold text-white mb-2">Myth Breakers: Are Tile Remodels Too Expensive?</h4>
+                <p className="text-gray-300 text-sm mb-4">Engaging educational content that debunks common tile remodeling myths while showcasing professional craftsmanship</p>
               </div>
 
               <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6 hover:border-cyan-400/40 transition-all duration-300">
