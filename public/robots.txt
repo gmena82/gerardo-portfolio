@@ -1,0 +1,17 @@
+# Robots.txt for gerardo-mena.com
+# https://www.gerardo-mena.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.gerardo-mena.com/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1
+
+# Block access to development/build artifacts (if any)
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /scripts/
+
