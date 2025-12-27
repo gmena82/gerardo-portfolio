@@ -110,6 +110,7 @@ function Home() {
                 src="https://www.youtube.com/embed/hsK5Z3dkaTw"
                 title="Tony Mena Highlight Reel"
                 frameBorder="0"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="w-full h-full"

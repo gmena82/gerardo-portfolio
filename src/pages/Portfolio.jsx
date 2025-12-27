@@ -5,7 +5,7 @@ function Portfolio() {
     title: "Portfolio | Gerardo Mena's AI Marketing, Writing & Design Work",
     description:
       'Review military-honed leadership, award-winning publications, and high-impact AI marketing campaigns that have generated millions of views and visitors.',
-    image: '/GEO-Feature.png',
+    image: '/GEO-Feature.webp',
     url: 'https://www.gerardo-mena.com/portfolio'
   })
 
@@ -106,8 +106,11 @@ function Portfolio() {
               <div className="flex flex-col gap-8 items-center">
                 <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
                   <img
-                    src="/YT-views.png"
+                    src="/YT-views.webp"
                     alt="YouTube Analytics showing 19.4M views, 3.2M watch hours, 115K subscribers, and 332M impressions"
+                    width="800"
+                    height="400"
+                    loading="lazy"
                     className="max-w-full h-auto rounded-lg shadow-lg"
                   />
                   <p className="text-gray-300 text-sm mt-4 max-w-2xl">
@@ -117,8 +120,11 @@ function Portfolio() {
                 </div>
                 <div className="bg-gray-900/60 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
                   <img
-                    src="/YT2-Views-Channel.png"
+                    src="/YT2-Views-Channel.webp"
                     alt="Second YouTube channel analytics showing over 1 million views - proof of repeatable success across multiple channels"
+                    width="800"
+                    height="400"
+                    loading="lazy"
                     className="max-w-full h-auto rounded-lg shadow-lg"
                   />
                   <p className="text-gray-300 text-sm mt-4 max-w-2xl">
@@ -210,6 +216,9 @@ function Portfolio() {
                 <img 
                   src="/LLMSO-Face-1.avif" 
                   alt="Military to Civilian Transformation - Split Face Design"
+                  width="400"
+                  height="400"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -229,6 +238,9 @@ function Portfolio() {
                 <img 
                   src="/LLMSO-Face-2.avif" 
                   alt="Business Professional to Warrior - Split Face Design"
+                  width="400"
+                  height="400"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -248,6 +260,9 @@ function Portfolio() {
                 <img 
                   src="/seo-money-tank.avif" 
                   alt="SEO Dominance Tank with Money - Marketing Metaphor"
+                  width="400"
+                  height="400"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -265,8 +280,11 @@ function Portfolio() {
             <div className="bg-gray-900/50 backdrop-blur-sm border border-teal-500/20 rounded-lg overflow-hidden hover:border-teal-400/40 transition-all duration-300 group">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/DP-2.gif" 
-                  alt="Dynamic Animated Design Element"
+                  src="/DP-2.webp" 
+                  alt="Dynamic Motion Graphics Design Element"
+                  width="400"
+                  height="400"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -312,6 +330,7 @@ function Portfolio() {
                     src="https://www.youtube.com/embed/hbZnUxdueNY"
                     title="Aesthetic Tile Social Short"
                     frameBorder="0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
@@ -327,6 +346,7 @@ function Portfolio() {
                     src="https://www.youtube.com/embed/Hll582-mC_4"
                     title="Fleitz Family Tile Showcase"
                     frameBorder="0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
@@ -350,6 +370,7 @@ function Portfolio() {
                     src="https://www.youtube.com/embed/XEpKyKCcM8I"
                     title="Myth Breakers: Are Tile Remodels Too Expensive?"
                     frameBorder="0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
@@ -365,6 +386,7 @@ function Portfolio() {
                     src="https://www.youtube.com/embed/3cSjVVlYiw0"
                     title="Dark Horse Elite Episode 1"
                     frameBorder="0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"

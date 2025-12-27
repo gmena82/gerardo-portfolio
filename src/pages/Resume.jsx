@@ -136,7 +136,7 @@ function Resume() {
     title: 'Resume | Gerardo Mena – Web Developer & AI Strategist',
     description:
       'Download the comprehensive resume for Gerardo Mena, highlighting 10+ years in web development, Section 508 leadership, AI content creation, and digital strategy.',
-    image: '/social-media.png',
+    image: '/social-media.webp',
     url: 'https://www.gerardo-mena.com/resume'
   })
 

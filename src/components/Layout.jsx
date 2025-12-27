@@ -39,8 +39,10 @@ function Layout({ children }) {
             className="hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/GM-Logo.png" 
-              alt="GM Logo" 
+              src="/GM-Logo.webp" 
+              alt="Gerardo Mena Logo - AI Strategist and Creative Technologist" 
+              width="40"
+              height="40"
               className="h-10 w-auto"
             />
           </Link>
@@ -189,8 +191,11 @@ function Layout({ children }) {
             <div className="text-center md:text-left">
               <div className="mb-4">
                 <img 
-                  src="/GM-Logo.png" 
-                  alt="GM Logo" 
+                  src="/GM-Logo.webp" 
+                  alt="Gerardo Mena Logo" 
+                  width="48"
+                  height="48"
+                  loading="lazy"
                   className="h-12 w-auto mx-auto md:mx-0"
                 />
               </div>

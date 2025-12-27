@@ -48,7 +48,7 @@ function BlogPost() {
         updatedTime: '2025-08-25T00:00:00.000Z',
         excerpt:
           'We rushed a documentary onto a Vegas jumbotron, then briefed the Harding Project on AI—exhausting, humbling, and worth it.',
-        heroImage: '/blog-photo.png',
+        heroImage: '/blog-photo.webp',
         tags: ['Updates', 'Documentary', 'AI', 'Conference'],
         readTime: '3 min read',
         content: `Wow. What a productive week!
@@ -186,7 +186,7 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
           name: 'Gerardo Mena',
           logo: {
             '@type': 'ImageObject',
-            url: `${baseUrl}/GM-Logo.png`
+            url: `${baseUrl}/GM-Logo.webp`
           }
         },
         datePublished: postData.publishedTime,
@@ -252,6 +252,9 @@ Generative Engine Optimization is not a far-off concept; it's the present and fu
           <img 
             src={post.heroImage} 
             alt={post.title}
+            width="1200"
+            height="600"
+            fetchpriority="high"
             className="w-full h-96 object-cover rounded-xl border border-cyan-500/20"
           />
         </div>

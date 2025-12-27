@@ -15,7 +15,10 @@ function About() {
       <div className="relative w-full h-56 sm:h-64 md:h-80 lg:h-[80vh] overflow-hidden pt-24 sm:pt-32">
         <img 
           src="/Gerardo-Mena-Future.webp" 
-          alt="Gerardo Tony Mena - Cyberpunk futuristic portrait"
+          alt="Gerardo Tony Mena - AI Strategist and Creative Technologist portrait"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ objectPosition: '50% 10%' }}
         />
@@ -44,8 +47,11 @@ function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Navy-Ball-2-F.png" 
+                    src="/Navy-Ball-2-F.webp" 
                     alt="Navy Ball - Military formal event"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -56,8 +62,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Chuck-Norris-F.png" 
+                    src="/Chuck-Norris-F.webp" 
                     alt="Military unit with Chuck Norris visit"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -68,8 +77,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Iraq-07-F.png" 
+                    src="/Iraq-07-F.webp" 
                     alt="Iraq deployment 2007 - Combat unit"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -80,8 +92,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Mongolia-F.png" 
+                    src="/Mongolia-F.webp" 
                     alt="Mongolia training exercise - Military personnel"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -107,8 +122,11 @@ function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Seth-Myers-F.png" 
+                    src="/Seth-Myers-F.webp" 
                     alt="Seth Meyers event - Literary career"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -119,8 +137,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/BoysatState-F.png" 
+                    src="/BoysatState-F.webp" 
                     alt="Boys at State wrestling event"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -131,8 +152,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/WordsofWar-F.png" 
+                    src="/WordsofWar-F.webp" 
                     alt="Words of War publication feature"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">
@@ -143,8 +167,11 @@ function About() {
 
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-400/40 transition-all duration-300">
                   <img 
-                    src="/Luke-State-F.png" 
+                    src="/Luke-State-F.webp" 
                     alt="Luke State wrestling championship"
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">

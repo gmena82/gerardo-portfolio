@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 const SITE_URL = 'https://www.gerardo-mena.com'
 const SITE_NAME = 'Gerardo Mena'
-const DEFAULT_IMAGE = '/social-media.png'
+const DEFAULT_IMAGE = '/social-media.webp'
 
 const ensureAbsoluteUrl = (value) => {
   if (!value) return undefined

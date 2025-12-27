@@ -7,7 +7,7 @@ function Contact() {
     title: 'Contact Gerardo Mena | Start Your AI-Driven Project',
     description:
       'Connect with Gerardo Mena to build AI-powered marketing, storytelling, and digital experiences tailored to your mission.',
-    image: '/social-media.png',
+    image: '/social-media.webp',
     url: 'https://www.gerardo-mena.com/contact'
   })
 

@@ -7,7 +7,7 @@ function Blog() {
     title: 'Blog | Insights on AI Strategy & Creative Leadership',
     description:
       'Read the latest articles from Gerardo Mena on AI-driven marketing, creative leadership, and the future of generative search.',
-    image: '/GEO-Feature.png',
+    image: '/GEO-Feature.webp',
     url: 'https://www.gerardo-mena.com/blog'
   })
 
@@ -57,7 +57,7 @@ function Blog() {
               category: "Updates",
               slug: "what-a-week",
               published: true,
-              image: "/blog-photo.png"
+              image: "/blog-photo.webp"
             },
             {
               title: "The Future of Generative Engine Optimization",
@@ -75,6 +75,9 @@ function Blog() {
                   <img 
                     src={post.image} 
                     alt={post.title}
+                    width="600"
+                    height="338"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
